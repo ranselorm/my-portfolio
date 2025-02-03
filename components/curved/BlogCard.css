@@ -1,0 +1,57 @@
+.blog-fill img {
+  --r: 25px; /* the radius */
+  --s: 80px; /* the size of the corner*/
+
+  width: 300px;
+  min-height: 10px;
+  /* margin-top: 20px; */
+  border-radius: 0;
+  object-fit: cover;
+
+  --_m: /calc(2 * var(--r)) calc(2 * var(--r)) radial-gradient(
+      #000 70%,
+      #0000 72%
+    ) no-repeat;
+}
+
+.blog-fill {
+  --r: 25px; /* the radius */
+  --s: 60px; /* the size of the corner*/
+
+  width: 280px;
+  min-height: 350px;
+  border-radius: var(--r);
+  object-fit: cover;
+  background-color: #583ebc;
+  position: relative;
+
+  --_m: /calc(2 * var(--r)) calc(2 * var(--r)) radial-gradient(
+      #000 70%,
+      #0000 72%
+    ) no-repeat;
+}
+
+.top-right {
+  mask: right calc(var(--s) + var(--r)) top 0 var(--_m),
+    right calc(var(--s) + var(--r)) var(--_m),
+    radial-gradient(var(--s) at 100% 0, #0000 99%, #000 101%)
+      calc(-1 * var(--r)) var(--r) no-repeat,
+    conic-gradient(
+      at calc(100% - var(--s) - 2 * var(--r)) calc(var(--s) + 2 * var(--r)),
+      #0000 25%,
+      #000 0
+    );
+}
+
+/* .bottom-right {
+  mask: right 0 bottom calc(var(--s) + var(--r)) var(--_m),
+    right calc(var(--s) + var(--r)) bottom 0 var(--_m),
+    radial-gradient(var(--s) at 100% 100%, #0000 99%, #000 101%)
+      calc(-1 * var(--r)) calc(-1 * var(--r)) no-repeat,
+    conic-gradient(
+      from 90deg at calc(100% - var(--s) - 2 * var(--r))
+        calc(100% - var(--s) - 2 * var(--r)),
+      #0000 25%,
+      #000 0
+    );
+} */

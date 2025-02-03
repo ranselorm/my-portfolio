@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: black;
+}
+
+@layer components {
+  .section-title {
+    @apply text-3xl font-heading font-semibold capitalize;
+  }
+  .section-subtitle {
+    @apply text-xl font-medium text-primary;
+  }
+  .section-padding {
+    @apply px-4 md:px-20 py-12;
+  }
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}

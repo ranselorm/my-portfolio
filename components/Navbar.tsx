@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="text-black py-4 section-padding font-mont">
-      <div className="container mx-auto max-w-5xl flex justify-between items-center px-2 py-2 relative bg-white rounded-full border-[1px] border-gray-800">
+      <div className="container mx-auto max-w-5xl flex justify-between items-center px-2 py-2 relative bg-deep rounded-full border-[1px] border-gray-800">
         {/* Logo */}
         <Link href="" className="px-3">
           <h2 className="font-pure font-bold text-2xl">ransel.</h2>

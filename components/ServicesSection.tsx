@@ -1,17 +1,45 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import React from "react";
 
+interface ServiceCardProps {
+  icon: string;
+  title: string;
+  description: string;
+}
+
 const ServicesSection = () => {
   return (
-    <div className="bg-white w-[300px] h-[200px] p-5 flex gap-x-5">
-      <Icon icon="streamline:web" className="bg-red-300 w-16 h-16" />
-      <div>
-        <h4 className="text-lg font-semibold">Web Development</h4>
-        <p className="text-sm text-gray-600">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus cum
-          nesciunt, minima
-        </p>
-      </div>
+    <div className="grid grid-cols-4 gap-6">
+      <ServiceCard
+        icon="mdi:finance"
+        title="Finance Planning"
+        description="Nanotechnology immersion along the information highway will close the loop on focusing solely."
+      />
+      <ServiceCard
+        icon="mdi:chart-bar"
+        title="Investment Planning"
+        description="Nanotechnology immersion along the information highway will close the loop on focusing solely."
+      />
+      <ServiceCard
+        icon="mdi:percent"
+        title="Mutual Funds"
+        description="Nanotechnology immersion along the information highway will close the loop on focusing solely."
+      />
+      <ServiceCard
+        icon="mdi:shield-home"
+        title="Personal Insurance"
+        description="Nanotechnology immersion along the information highway will close the loop on focusing solely."
+      />
+      <ServiceCard
+        icon="mdi:cash-multiple"
+        title="Market Research"
+        description="Nanotechnology immersion along the information highway will close the loop on focusing solely."
+      />
+      <ServiceCard
+        icon="mdi:chart-pie"
+        title="Business Analysis"
+        description="Nanotechnology immersion along the information highway will close the loop on focusing solely."
+      />
     </div>
   );
 };

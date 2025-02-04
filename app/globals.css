@@ -13,9 +13,6 @@ body {
   .section-subtitle {
     @apply text-xl font-medium text-primary;
   }
-  .section-padding {
-    @apply px-4 md:px-20 py-12;
-  }
 }
 
 @layer base {

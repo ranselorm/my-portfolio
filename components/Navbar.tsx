@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
 const leftNavLinks = [
@@ -9,41 +10,72 @@ const leftNavLinks = [
   { href: "#blog", label: "Blog" },
 ];
 
-const rightNavLinks = [
-  { href: "#portfolio", label: "Portfolio" },
-  { href: "#blog", label: "Blog" },
-  { href: "#contact", label: "Contact" },
-];
-
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
+
+  // Detect scroll to change navbar background
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolling(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="text-black py-4 section-padding font-mont">
-      <div className="container mx-auto max-w-5xl flex justify-between items-center px-2 py-2 relative bg-deep rounded-full border-[1px] border-gray-800">
+    <motion.nav
+      className={`fixed w-full top-0 left-0 z-50 py-4 section-padding font-mont ${
+        scrolling ? "bg-white shadow-md" : "bg-transparent"
+      }`}
+      initial={{ y: -50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="container mx-auto max-w-5xl flex justify-between items-center px-4 py-2 rounded-full border-[1px] border-gray-800">
         {/* Logo */}
-        <Link href="" className="px-3">
-          <h2 className="font-pure font-bold text-2xl">ransel.</h2>
-        </Link>
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Link href="/" className="px-3">
+            <h2 className="font-pure font-bold text-2xl">ransel.</h2>
+          </Link>
+        </motion.div>
 
-        {/* Left Links */}
-        <div className="hidden md:flex space-x-4 z-10 font-medium">
-          {leftNavLinks?.map((link, index) => (
-            <Link href="#" className="px-5 py-2" key={index}>
-              {link.label}
-            </Link>
+        {/* Desktop Links */}
+        <div className="hidden md:flex space-x-6 font-medium">
+          {leftNavLinks.map((link, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <Link href={link.href} className="px-5 py-2">
+                {link.label}
+              </Link>
+            </motion.div>
           ))}
         </div>
 
-        {/* Right Links */}
-        <div className="hidden md:flex z-10 px-1">
+        {/* Contact Button */}
+        <motion.div
+          className="hidden md:flex"
+          whileHover={{ scale: 1.1 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
           <button className="bg-primary px-4 text-white rounded-full py-2">
             Contact
           </button>
-        </div>
+        </motion.div>
 
-        {/* Hamburger menu for small screens */}
-        <div className="md:hidden">
+        {/* Hamburger Menu */}
+        <motion.div
+          className="md:hidden"
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="focus:outline-none"
@@ -63,39 +95,38 @@ const Navbar: React.FC = () => {
               />
             </svg>
           </button>
-        </div>
+        </motion.div>
       </div>
 
-      {/* Mobile menu */}
-      {isOpen && (
-        <div className="md:hidden bg-purple-600">
-          <Link href="#home" className="block py-2 px-4 hover:bg-purple-700">
-            Home
-          </Link>
-          <Link href="#about" className="block py-2 px-4 hover:bg-purple-700">
-            About
-          </Link>
-          <Link
-            href="#services"
-            className="block py-2 px-4 hover:bg-purple-700"
+      {/* Mobile Menu Animation */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ y: -10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -10, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-white shadow-lg rounded-lg p-4 absolute w-full top-16 left-0"
           >
-            Service
-          </Link>
-          <Link
-            href="#portfolio"
-            className="block py-2 px-4 hover:bg-purple-700"
-          >
-            Portfolio
-          </Link>
-          <Link href="#blog" className="block py-2 px-4 hover:bg-purple-700">
-            Blog
-          </Link>
-          <Link href="#contact" className="block py-2 px-4 hover:bg-purple-700">
-            Contact
-          </Link>
-        </div>
-      )}
-    </nav>
+            {leftNavLinks.map((link, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Link
+                  href={link.href}
+                  className="block py-2 px-4 text-black hover:bg-gray-200 rounded-md"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   );
 };
 

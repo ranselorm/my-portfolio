@@ -1,6 +1,7 @@
 import React from "react";
 import ServicesCard from "./curved/ServicesCard";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import ServicesSection from "./ServicesSection";
 
 const Services = () => {
   return (
@@ -14,10 +15,11 @@ const Services = () => {
         </p>
       </div>
       <div className="flex flex-col md:flex-row items-center justify-center container mx-auto gap-4">
-        <ServicesCard title="Web Application" image="/images/web.jpg" />
+        {/* <ServicesCard title="Web Application" image="/images/web.jpg" />
         <ServicesCard title="Landing Page" image="/images/vr.jpg" />
         <ServicesCard title="Restful APIs" image="/images/design.jpg" />
-        <ServicesCard title="Responsive Design" image="/images/book.jpg" />
+        <ServicesCard title="Responsive Design" image="/images/book.jpg" /> */}
+        <ServicesSection />
       </div>
     </section>
   );

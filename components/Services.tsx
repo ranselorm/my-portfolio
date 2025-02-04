@@ -32,8 +32,8 @@ const Services = () => {
             description="Nanotechnology immersion along the information highway will close the loop on focusing solely."
           />
           <ServiceCard
-            icon="mdi:shopping"
-            title="E-Commerce Solutions"
+            icon="bxs:chart"
+            title="SEO Optimization"
             description="Nanotechnology immersion along the information highway will close the loop on focusing solely."
           />
         </div>

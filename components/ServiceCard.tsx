@@ -16,7 +16,9 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
     <div className="bg-white shadow-lg p-6 h-[250px] flex flex-col justify-between">
       <div className="flex items-center gap-3 mb-5">
         <Icon icon={icon} className="w-12 h-12 text-primary" />
-        <h4 className="text-sm uppercase font-bold text-gray-800">{title}</h4>
+        <h4 className="text-base font-bold text-gray-800  whitespace-nowrap">
+          {title}
+        </h4>
       </div>
       <p className="text-sm text-gray-600 flex-grow">{description}</p>
       <a href="#" className="text-blue-500 text-sm font-medium mt-auto">

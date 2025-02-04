@@ -16,9 +16,9 @@ const Navbar: React.FC = () => {
   return (
     // Replace <nav> with <motion.nav> and add initial, animate, and transition props.
     <motion.nav
-      initial={{ y: -20, opacity: 0 }} // start 100px above and invisible
-      animate={{ y: 0, opacity: 1 }} // animate to its natural position and fully visible
-      transition={{ duration: 0.9, ease: "easeOut" }} // adjust timing and easing as desired
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.9, ease: "easeOut" }}
       className="text-black py-4 section-padding font-mont"
     >
       <div className="container mx-auto max-w-5xl flex justify-between items-center px-2 py-2 relative bg-deep rounded-full border-[1px] border-gray-800">

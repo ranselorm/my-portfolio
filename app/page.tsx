@@ -18,7 +18,7 @@ export default function Home() {
       {/* <About /> */}
       <Services />
       <Skills />
-      <Portfolio />
+      {/* <Portfolio /> */}
       <Blog />
       <Connect />
       <Contact />

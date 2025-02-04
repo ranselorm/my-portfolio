@@ -1,5 +1,7 @@
+"use client";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import React from "react";
+import { motion } from "framer-motion"; // Import Framer Motion
 
 const HeroSection: React.FC = () => {
   return (
@@ -11,7 +13,13 @@ const HeroSection: React.FC = () => {
     >
       <div className="absolute inset-0 bg-black opacity-85"></div>
 
-      <div className="container mx-auto relative z-10 text-center text-white flex flex-col gap-5">
+      {/* Animated Content */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }} // Start slightly below and invisible
+        animate={{ opacity: 1, y: 0 }} // Animate to full opacity and natural position
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="container mx-auto relative z-10 text-center text-white flex flex-col gap-5"
+      >
         <span className="text-lg font-semibold tracking-wide font-pure text-gray-300">
           Hello there👋🏾
         </span>
@@ -33,7 +41,7 @@ const HeroSection: React.FC = () => {
             className="text-lg text-white"
           />
         </button>
-      </div>
+      </motion.div>
     </section>
   );
 };

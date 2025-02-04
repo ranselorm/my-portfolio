@@ -17,17 +17,17 @@ const Services = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-4 gap-4">
           <ServiceCard
-            icon="mdi:web"
+            icon="carbon:ibm-cloud-pak-applications"
             title="Web Application"
             description="Nanotechnology immersion along the information highway will close the loop on focusing solely."
           />
           <ServiceCard
-            icon="mdi:cellphone"
+            icon="circum:mobile-3"
             title="Mobile Application"
             description="Nanotechnology immersion along the information highway will close the loop on focusing solely."
           />
           <ServiceCard
-            icon="mdi:monitor-dashboard"
+            icon="material-symbols-light:web"
             title="Landing Page"
             description="Nanotechnology immersion along the information highway will close the loop on focusing solely."
           />

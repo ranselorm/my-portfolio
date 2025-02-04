@@ -3,7 +3,10 @@ import { ServiceCard } from "./ServiceCard";
 
 const Services = () => {
   return (
-    <section className="bg-dark h-full font-mont section-padding">
+    <section
+      className="bg-dark h-full font-mont section-padding bg-center bg-co"
+      style={{ backgroundImage: `url('/images/book.jpg)` }}
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 text-white flex flex-col gap-y-2">
           <p className="text-xl font-medium text-primary">My Expertise</p>

@@ -23,13 +23,13 @@ const itemVariants = {
 const Services = () => {
   return (
     <motion.section
-      className="bg-dark h-full font-mont section-padding"
+      className="bg-gray-50 h-full font-mont section-padding"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="text-center mb-8 text-white flex flex-col gap-y-2">
           <p className="text-xl font-medium text-primary">My Expertise</p>
           <h3 className="section-title text">Innovative Solutions</h3>

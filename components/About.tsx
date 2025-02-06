@@ -27,7 +27,7 @@ const About = () => {
 
   return (
     <motion.section
-      className="section-padding"
+      className="section-padding bg-white"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}

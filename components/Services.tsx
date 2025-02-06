@@ -23,7 +23,7 @@ const itemVariants = {
 const Services = () => {
   return (
     <motion.section
-      className="bg-gray-50 h-full font-mont section-padding"
+      className="bg-dark h-full font-mont section-padding"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}

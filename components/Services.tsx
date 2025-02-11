@@ -35,7 +35,6 @@ const Services = () => {
           <h3 className="section-title text">Innovative Solutions</h3>
         </div>
 
-        {/* Services Grid with Smoother Staggered Animation */}
         <motion.div
           className="grid grid-cols-4 gap-4"
           variants={containerVariants}

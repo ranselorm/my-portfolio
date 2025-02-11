@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion"; // Import Framer Motion
+import { motion } from "framer-motion";
 
 const leftNavLinks = [
   { href: "#home", label: "Home" },
@@ -14,7 +14,6 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    // Replace <nav> with <motion.nav> and add initial, animate, and transition props.
     <motion.nav
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
@@ -22,12 +21,10 @@ const Navbar: React.FC = () => {
       className="text-black py-4 section-padding font-mont"
     >
       <div className="container mx-auto max-w-5xl flex justify-between items-center px-2 py-2 relative bg-deep rounded-full border-[1px] border-gray-800">
-        {/* Logo */}
         <Link href="" className="px-3">
           <h2 className="font-pure font-bold text-2xl">ransel.</h2>
         </Link>
 
-        {/* Left Links */}
         <div className="hidden md:flex space-x-4 z-10 font-medium">
           {leftNavLinks.map((link, index) => (
             <Link href="#" className="px-5 py-2" key={index}>
@@ -36,14 +33,12 @@ const Navbar: React.FC = () => {
           ))}
         </div>
 
-        {/* Right Links */}
         <div className="hidden md:flex z-10 px-1">
           <button className="bg-primary px-4 text-white rounded-full py-2">
             Contact
           </button>
         </div>
 
-        {/* Hamburger menu for small screens */}
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -67,7 +62,6 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {isOpen && (
         <div className="md:hidden bg-purple-600">
           <Link href="#home" className="block py-2 px-4 hover:bg-purple-700">

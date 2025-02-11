@@ -1,10 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
-import { Icon } from "@iconify/react/dist/iconify.js";
 
 const About = () => {
   const containerVariants = {
@@ -36,7 +32,6 @@ const About = () => {
         className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12"
         variants={containerVariants}
       >
-        {/* Image with Text Overlay */}
         <motion.div
           className="relative h-[500px] md:h-auto"
           variants={itemVariants}
@@ -48,7 +43,6 @@ const About = () => {
           />
         </motion.div>
 
-        {/* Form Section */}
         <motion.form
           className="space-y-6 bg-white border border-white"
           variants={containerVariants}

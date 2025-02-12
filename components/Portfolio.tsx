@@ -67,12 +67,10 @@ const Portfolio: React.FC = () => {
   return (
     <section className="section-padding bg-dark text-white font-primary">
       <main className="container mx-auto">
-        {/* Section Header */}
         <div className="text-center mb-8">
           <h2 className="font-heading section-title">My Projects</h2>
         </div>
 
-        {/* Category Tabs */}
         <div className="flex justify-center space-x-6 mb-8">
           {categories.map((category) => (
             <button
@@ -94,16 +92,14 @@ const Portfolio: React.FC = () => {
             <div
               key={project.id}
               className="relative bg-white rounded shadow overflow-hidden group transform transition duration-500 ease-in-out h-[300px]"
-              style={{ animationDelay: `${index * 0.3}s` }} // Staggered animation
+              style={{ animationDelay: `${index * 0.3}s` }}
             >
-              {/* Project Image */}
               <img
                 src={project.image}
                 alt={project.title}
                 className="w-full h-full rounded-none object-cover group-hover:opacity-80 transition"
               />
 
-              {/* Overlay */}
               <div className="absolute inset-0 bg-primary bg-opacity-55 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
                 <h3 className="text-2xl text-white font-bold">
                   {project.title}

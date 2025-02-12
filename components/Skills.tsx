@@ -31,7 +31,6 @@ const Skiils = () => {
             controller.
           </p>
         </div>
-        {/* cards */}
         <div className="md:w-4/6 grid md:grid-cols-4 grid-cols-2 gap-5">
           {skills.map((skill, index) => (
             <div

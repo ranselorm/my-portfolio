@@ -18,7 +18,6 @@ const Hero: React.FC = () => {
             web applications development. Let's create something great together!
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
-            {/* <Button label="About" variant="primary" /> */}
             <Button
               label="Portfolio"
               variant="secondary"
@@ -27,7 +26,6 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Image */}
         <main className="flex-1 flex items-center justify-center gap-x-20">
           <div className="relative md:w-[350px]">
             <CurvedCard src="/images/passport.jpg" />

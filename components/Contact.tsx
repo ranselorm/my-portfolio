@@ -66,10 +66,8 @@ const Contact = () => {
       <DialogTitle className="hidden">Title</DialogTitle>
       <DialogContent className="md:max-w-[500px] w-full h-[90vh] font-primary bg-grey border-none">
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
-          {/* left */}
           <div className="bg-transparent p-6">
             <form className="space-y-5" onSubmit={handleSubmit}>
-              {/* Interest Selection */}
               <div>
                 <Label className="block text-sm font-medium text-gray-700 mb-2">
                   I’m interested in:
@@ -98,7 +96,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Name Field */}
               <div>
                 <Label htmlFor="name">Your Name</Label>
                 <Input
@@ -112,7 +109,6 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Email Field */}
               <div>
                 <Label htmlFor="email">Your Email</Label>
                 <Input
@@ -127,7 +123,6 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Message Field */}
               <div>
                 <Label htmlFor="message">Your Message</Label>
                 <Textarea
@@ -142,10 +137,8 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Error Message */}
               {error && <p className="text-red-500 text-sm">{error}</p>}
 
-              {/* Submit Button */}
               <div className="flex justify-end">
                 <Button
                   type="submit"

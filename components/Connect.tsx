@@ -18,7 +18,6 @@ const Connect = () => {
             you bring the ideas!
           </div>
           <div className="w-full md:w-max">
-            {/* Call openSheet when the button is clicked */}
             <Button className="bg-primary" onClick={openSheet}>
               Let's do this!
             </Button>

@@ -20,16 +20,14 @@ const HeroSection: React.FC = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="container mx-auto relative z-10 text-center text-white flex flex-col gap-5"
       >
-        <span className="text-lg font-semibold tracking-wide font-pure text-gray-300">
+        <span className="md:text-xl font-semibold tracking-wide font-pure text-gray-300">
           Hello there👋🏾
         </span>
-        <h1 className="text-lg sm:text-4xl text-white font-mont font-bold">
-          I am Randy,
-          <code className="bg-deep px-2 py-1 rounded font-mono ml-1 text-black">
-            &lt;Software Engineer /&gt;
-          </code>
-        </h1>
-        <p className="max-w-2xl mx-auto">
+        <h3 className="text-white font-mont font-bold text-2xl md:text-3xl">
+          I am Randy, a Software Engineer
+          {/* <code className="px-2 py-1 rounded font-mono ml-1">&lt; /&gt;</code> */}
+        </h3>
+        <p className="md:max-w-2xl mx-auto text-lg w-full">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
           molestias, repellat accusantium laborum voluptatibus totam ea eos
           maxime nihil impedit.

@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
           <h2 className="font-pure font-bold text-xl">ransel.</h2>
         </Link>
 
-        <div className="hidden md:flex space-x-3 z-10 font-medium">
+        <div className="hidden md:flex space-x-4 z-10 font-medium">
           {leftNavLinks.map((link, index) => (
             <Link href="#" className="px-5 py-2" key={index}>
               {link.label}

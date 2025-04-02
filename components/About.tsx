@@ -32,15 +32,18 @@ const About = () => {
         className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12"
         variants={containerVariants}
       >
-        <motion.div
-          className="relative h-[500px] md:h-auto"
-          variants={itemVariants}
-        >
-          <img
-            src="https://images.pexels.com/photos/10101138/pexels-photo-10101138.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="Contact Us"
-            className="w-full h-full object-cover rounded-xl"
-          />
+        <motion.div className="relative" variants={itemVariants}>
+          <motion.div
+            className="h-[400px] w-[350px] z-20 absolute"
+            variants={itemVariants}
+          >
+            <img
+              src="https://images.pexels.com/photos/10101138/pexels-photo-10101138.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Contact Us"
+              className="w-full h-full object-cover rounded-xl"
+            />
+          </motion.div>
+          <div className="bg-primary h-[400px] w-[350px] absolute top-10 right-28 z-10"></div>
         </motion.div>
 
         <motion.form

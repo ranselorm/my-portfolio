@@ -15,13 +15,13 @@ export default function Home() {
       <Navbar />
       {/* <Hero /> */}
       <HeroSection />
-      <Services />
+      {/* <Services /> */}
       <About />
-      <Skills />
+      {/* <Skills /> */}
       {/* <Portfolio /> */}
-      <Blog />
-      <Connect />
-      <Contact />
+      {/* <Blog /> */}
+      {/* <Connect /> */}
+      {/* <Contact /> */}
     </div>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import React from "react";
-import { motion } from "framer-motion"; // Import Framer Motion
+import { motion } from "framer-motion";
 
 const HeroSection: React.FC = () => {
   return (
@@ -13,10 +13,9 @@ const HeroSection: React.FC = () => {
     >
       <div className="absolute inset-0 bg-black opacity-85"></div>
 
-      {/* Animated Content */}
       <motion.div
-        initial={{ opacity: 0, y: 50 }} // Start slightly below and invisible
-        animate={{ opacity: 1, y: 0 }} // Animate to full opacity and natural position
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="container mx-auto relative z-10 text-center text-white flex flex-col gap-5"
       >

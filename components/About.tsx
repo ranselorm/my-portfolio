@@ -23,7 +23,7 @@ const About = () => {
 
   return (
     <motion.section
-      className="section-padding bg-white"
+      className="section-padding bg-white font-primary"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
@@ -32,18 +32,18 @@ const About = () => {
         className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12"
         variants={containerVariants}
       >
-        <motion.form
-          className="space-y-6 border border-white"
-          variants={containerVariants}
-        >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
-          eveniet! Dicta exercitationem sequi vero ab, illum laborum enim modi
-          provident a mollitia, velit sit! Voluptatibus accusantium obcaecati
-          quisquam enim nam! Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Fugiat odio deleniti aut. Iure quod a explicabo, voluptatibus
-          quisquam illum cum non molestias omnis dignissimos illo amet aliquam,
-          soluta, veniam harum.
-        </motion.form>
+        <motion.div className="" variants={containerVariants}>
+          <h3 className="text-2xl font-semibold mb-4">About me</h3>
+          <p className="leading-normal text-gray-900 mb-4 text-lg">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
+            eveniet! Dicta exercitationem sequi vero ab, illum laborum enim modi
+            provident a mollitia, velit sit! Voluptatibus accusantium obcaecati
+            quisquam enim nam! Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Fugiat odio deleniti aut. Iure quod a explicabo,
+            voluptatibus quisquam illum cum non molestias omnis dignissimos illo
+            amet aliquam, soluta, veniam harum.
+          </p>
+        </motion.div>
         <motion.div className="flex justify-center" variants={itemVariants}>
           <div className="relative w-[350px] h-[400px]">
             <div className="absolute inset-0 bg-primary rounded-xl transform translate-x-10 translate-y-10 z-0">

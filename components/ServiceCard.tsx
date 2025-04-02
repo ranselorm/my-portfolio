@@ -20,7 +20,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
           {title}
         </h4>
       </div>
-      <p className="text-sm text-gray-600 flex-grow">{description}</p>
+      <p className="text-sm text-gray-900 flex-grow">{description}</p>
       <a href="#" className="text-blue-500 text-sm font-medium mt-auto">
         Read more...
       </a>

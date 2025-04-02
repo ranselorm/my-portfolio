@@ -32,7 +32,7 @@ const About = () => {
         className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12"
         variants={containerVariants}
       >
-        {/* <motion.form
+        <motion.form
           className="space-y-6 border border-white"
           variants={containerVariants}
         >
@@ -43,10 +43,9 @@ const About = () => {
           elit. Fugiat odio deleniti aut. Iure quod a explicabo, voluptatibus
           quisquam illum cum non molestias omnis dignissimos illo amet aliquam,
           soluta, veniam harum.
-        </motion.form> */}
+        </motion.form>
         <motion.div className="flex justify-center" variants={itemVariants}>
           <div className="relative w-[350px] h-[400px]">
-            {/* Background element offset using transform */}
             <div className="absolute inset-0 bg-primary rounded-xl transform translate-x-10 translate-y-10 z-0">
               <img
                 src="/images/bg.svg"
@@ -55,7 +54,6 @@ const About = () => {
               />
             </div>
 
-            {/* Foreground image */}
             <img
               src="https://images.pexels.com/photos/10101138/pexels-photo-10101138.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt=""

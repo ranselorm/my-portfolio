@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Marquee from "react-fast-marquee";
 
 const About = () => {
   const containerVariants = {
@@ -49,6 +50,14 @@ const About = () => {
           <p className="leading-normal text-gray-900 text-lg">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
           </p>
+          <Marquee
+            pauseOnHover
+            speed={20}
+            className="text-lg font-semibold mt-4"
+          >
+            I can be a React component, multiple React components, or just some
+            text.
+          </Marquee>
         </motion.div>
         <motion.div className="flex" variants={itemVariants}>
           <div className="relative w-[400px] h-[400px]">

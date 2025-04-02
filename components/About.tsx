@@ -43,7 +43,13 @@ const About = () => {
               className="w-full h-full object-cover rounded-xl relative z-10"
             />
           </motion.div>
-          <div className="bg-primary h-[400px] w-[350px] absolute top-10 right-28 z-0 rounded-xl "></div>
+          <div className="bg-primary h-[400px] w-[350px] absolute top-10 right-28 z-0 rounded-xl">
+            {/* <img
+              src="/images/bg.svg"
+              alt="Background"
+              className="w-full h-full object-cover rounded-xl relative z-10"
+            /> */}
+          </div>
         </motion.div>
 
         <motion.form

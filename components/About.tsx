@@ -34,16 +34,16 @@ const About = () => {
       >
         <motion.div className="relative" variants={itemVariants}>
           <motion.div
-            className="h-[400px] w-[350px] z-20 absolute"
+            className="h-[400px] w-[350px] z-20"
             variants={itemVariants}
           >
             <img
               src="https://images.pexels.com/photos/10101138/pexels-photo-10101138.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt="Contact Us"
-              className="w-full h-full object-cover rounded-xl"
+              className="w-full h-full object-cover rounded-xl relative z-10"
             />
           </motion.div>
-          <div className="bg-primary h-[400px] w-[350px] absolute top-10 right-28 z-10"></div>
+          <div className="bg-primary h-[400px] w-[350px] absolute top-10 right-28 z-0 rounded-xl "></div>
         </motion.div>
 
         <motion.form

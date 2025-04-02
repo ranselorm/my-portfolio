@@ -32,26 +32,6 @@ const About = () => {
         className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12"
         variants={containerVariants}
       >
-        <motion.div className="relative" variants={itemVariants}>
-          <motion.div
-            className="h-[400px] w-[350px] z-20"
-            variants={itemVariants}
-          >
-            <img
-              src="https://images.pexels.com/photos/10101138/pexels-photo-10101138.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt="Contact Us"
-              className="w-full h-full object-cover rounded-xl relative z-10"
-            />
-          </motion.div>
-          <div className="bg-primary h-[400px] w-[350px] absolute top-10 right-28 z-0 rounded-xl">
-            {/* <img
-              src="/images/bg.svg"
-              alt="Background"
-              className="w-full h-full object-cover rounded-xl relative z-10"
-            /> */}
-          </div>
-        </motion.div>
-
         <motion.form
           className="space-y-6 bg-white border border-white"
           variants={containerVariants}
@@ -64,6 +44,25 @@ const About = () => {
           quisquam illum cum non molestias omnis dignissimos illo amet aliquam,
           soluta, veniam harum.
         </motion.form>
+        <motion.div className="relative" variants={itemVariants}>
+          <div
+            className="h-[400px] w-[350px] z-20"
+            // variants={itemVariants}
+          >
+            <img
+              src="https://images.pexels.com/photos/10101138/pexels-photo-10101138.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Contact Us"
+              className="w-full h-full object-cover rounded-xl relative z-10"
+            />
+          </div>
+          <div className="bg-primary h-[400px] w-[350px] absolute top-10 right-28 z-0 rounded-xl">
+            <img
+              src="/images/bg.svg"
+              alt="Background"
+              className="w-full h-full object-cover rounded-xl relative z-10 opacity-15"
+            />
+          </div>
+        </motion.div>
       </motion.div>
     </motion.section>
   );

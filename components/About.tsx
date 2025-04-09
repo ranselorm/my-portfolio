@@ -3,6 +3,22 @@
 import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
 
+type SkiilsType = {
+  title: string;
+  icon: string;
+};
+
+const skills: SkiilsType[] = [
+  { title: "Javascript", icon: "devicon:javascript" },
+  { title: "Typescript", icon: "devicon:typescript" },
+  { title: "React", icon: "skill-icons:react-dark" },
+  { title: "Next", icon: "skill-icons:nextjs-light" },
+  { title: "Tailwind", icon: "skill-icons:tailwindcss-dark" },
+  { title: "HTML5", icon: "skill-icons:html" },
+  { title: "CSS3", icon: "skill-icons:css" },
+  { title: "Python", icon: "skill-icons:python-dark" },
+];
+
 const About = () => {
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },

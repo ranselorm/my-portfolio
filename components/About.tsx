@@ -70,17 +70,11 @@ const About = () => {
           <Marquee
             pauseOnHover
             speed={20}
-            className="text-lg font-semibold mt-4"
+            className="text-3xl font-semibold mt-8"
           >
-            {/* I can be a React component, multiple React components, or just some
-            text. */}
             {skills.map((skill, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-2 text-gray-900 mr-8"
-              >
+              <div key={index} className="flex items-center gap-2 mx-6">
                 <Icon icon={skill.icon} />
-                {/* <span>{skill.title}</span> */}
               </div>
             ))}
           </Marquee>

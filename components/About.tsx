@@ -64,8 +64,10 @@ const About = () => {
             provident a mollitia, velit sit! Voluptatibus accusantium obcaecati
             quisquam enim nam! Lorem ipsum dolor sit amet consectetur
           </p>
-          <p className="leading-normal text-gray-900 text-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
+          <p className="leading-normal text-gray-900 text-base">
+            My Toolkit includesReact.js | Next.js | JavaScript | TypeScript |
+            HTML | CSS | Tailwind CSS | Node.js | Express.js | Restful APIs |
+            MongoDB | Git{" "}
           </p>
           <Marquee
             pauseOnHover

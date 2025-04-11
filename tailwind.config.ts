@@ -6,7 +6,6 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
 
-    // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -26,6 +25,7 @@ module.exports = {
         heading: ["Rubik", "sans-serif"],
         mont: ["Montserrat", "sans-serif"],
         pure: ["puremechanic", "sans-serif"],
+        nunito: ["Nunito", "sans-serif"],
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out forwards",

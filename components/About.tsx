@@ -64,7 +64,7 @@ const About = () => {
             provident a mollitia, velit sit! Voluptatibus accusantium obcaecati
             quisquam enim nam! Lorem ipsum dolor sit amet consectetur
           </p>
-          <p className="leading-normal text-gray-900 text-base">
+          <p className="leading-normal text-gray-900 text-base font-nunito">
             My Toolkit includesReact.js | Next.js | JavaScript | TypeScript |
             HTML | CSS | Tailwind CSS | Node.js | Express.js | Restful APIs |
             MongoDB | Git{" "}

@@ -22,9 +22,8 @@ const HeroSection: React.FC = () => {
         <span className="md:text-xl font-semibold tracking-wide font-pure text-gray-300">
           Hello there👋🏾
         </span>
-        <h3 className="text-white font-mont font-bold text-2xl md:text-3xl">
+        <h3 className="text-white font-nunito font-bold text-2xl md:text-3xl">
           I'm Randy, a FullStack Developer
-          {/* <code className="px-2 py-1 rounded font-mono ml-1">&lt; /&gt;</code> */}
         </h3>
         <p className="md:max-w-lg mx-auto text-lg w-full">
           Specialized in MERN Stack, I welcome you to my world of innovative web

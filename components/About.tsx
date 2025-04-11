@@ -51,7 +51,7 @@ const About = () => {
         variants={containerVariants}
       >
         <motion.div className="md:max-w-xl" variants={containerVariants}>
-          <h3 className="text-2xl font-semibold mb-4">About me</h3>
+          <h3 className="text-2xl font-bold mb-4">About me</h3>
           <p className="leading-normal text-gray-900 mb-4 text-lg">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
             eveniet! Dicta exercitationem sequi vero ab, illum laborum enim modi

@@ -23,13 +23,12 @@ const HeroSection: React.FC = () => {
           Hello there👋🏾
         </span>
         <h3 className="text-white font-mont font-bold text-2xl md:text-3xl">
-          I am Randy, a Software Engineer
+          I'm Randy, a FullStack Developer
           {/* <code className="px-2 py-1 rounded font-mono ml-1">&lt; /&gt;</code> */}
         </h3>
-        <p className="md:max-w-2xl mx-auto text-lg w-full">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
-          molestias, repellat accusantium laborum voluptatibus totam ea eos
-          maxime nihil impedit.
+        <p className="md:max-w-lg mx-auto text-lg w-full">
+          Specialized in MERN Stack, I welcome you to my world of innovative web
+          applications development. Let's create something great together!
         </p>
         <button className="px-4 py-2 bg-primary text-white rounded hover:bg-dark w-max mx-auto flex items-center gap-x-2">
           Portfolio

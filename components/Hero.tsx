@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
               icon="pepicons-pencil:arrow-up-right"
             />
           </div> */}
-          <div className="flex items-center ">
+          <div className="flex items-center cursor-pointer w-max">
             <div className="w-8 h-8 bg-gray-300 rounded-full" />
             <p className="text-xs -ml-4 font-black font-mont">SEE MY WORKS</p>
             <Icon icon="radix-icons:arrow-right" className="ml-3" />

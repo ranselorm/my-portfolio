@@ -14,9 +14,9 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      {/* <Hero /> */}
-      <MainHero />
-      <HeroSection />
+      <Hero />
+      {/* <MainHero /> */}
+      {/* <HeroSection /> */}
       <Services />
       <About />
       {/* <Skills /> */}

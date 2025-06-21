@@ -1,7 +1,7 @@
 import React from "react";
 
 const MainHero = () => {
-  return <div>MainHero</div>;
+  return <section>MainHero</section>;
 };
 
 export default MainHero;

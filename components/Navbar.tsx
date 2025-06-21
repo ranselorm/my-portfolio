@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
       transition={{ duration: 0.9, ease: "easeOut" }}
       className="text-black py-4 section-padding font-mont"
     >
-      <div className="container mx-auto max-w-3xl flex justify-between items-center px-2 py-2 relative bg-white rounded-full border-[1px] border-gray-800">
+      <div className="container mx-auto max-w-3xl flex justify-between items-center px-2 py-2 relative bg-[#00020a] text-white rounded-full border-[1px] border-gray-800">
         <Link href="" className="px-3">
           <h2 className="font-pure font-bold text-xl">ransel.</h2>
         </Link>

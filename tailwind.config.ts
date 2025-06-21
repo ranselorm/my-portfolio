@@ -25,7 +25,7 @@ module.exports = {
         mont: ["Montserrat", "sans-serif"],
         pure: ["puremechanic", "sans-serif"],
         nunito: ["Nunito", "sans-serif"],
-        hero: ["VisueltPro-Regular", "sans-serif"],
+        hero: ["hero", "sans-serif"],
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out forwards",

@@ -15,20 +15,23 @@ const Rubik = localFont({
   variable: "--font-rubik",
   weight: "100 900",
 });
+
 const Montserrat = localFont({
   src: "./fonts/Montserrat.ttf",
   variable: "--font-mont",
   weight: "100 900",
 });
+
 const puremechanic = localFont({
   src: "./fonts/puremechanic.ttf",
   variable: "--font-pure",
   weight: "100 900",
 });
+
 const hero = localFont({
   src: "./fonts/VisueltPro-Regular.woff",
-  variable: "--font-pure",
-  weight: "100 900",
+  variable: "--font-hero",
+  // weight: "100 900",
 });
 
 export const metadata: Metadata = {

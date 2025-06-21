@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
       <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8">
         <div className="text-center md:text-left flex-1 flex flex-col space-y-5">
           {/* <h3 className="text-[80px] font-hero text-black">Randy S.</h3> */}
-          <p className="text-black text-3xl">creative</p>
+          <p className="text-black text-3xl font-hero">creative</p>
           <p className="text-xl w-full md:max-w-5xl">
             Specialized in MERN Stack, I welcome you to my world of innovative
             web applications development. Let's create something great together!

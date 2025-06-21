@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 
 const Hero: React.FC = () => {
   return (
-    <section className="bg-[#f9f9f9] py-20 font-primary flex items-center justify-center section-padding">
+    <section className="bg-grey py-20 font-primary flex items-center justify-center section-padding">
       <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8">
         <div className="text-center md:text-left flex-1 flex flex-col space-y-5">
           {/* <h3 className="text-[80px] font-hero text-black">Randy S.</h3> */}

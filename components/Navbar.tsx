@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.9, ease: "easeOut" }}
-      className="text-black py-4 section-padding font-mont"
+      className="text-black py-4 section-padding font-mont bg-grey"
     >
       <div className="container mx-auto max-w-3xl flex justify-between items-center px-2 py-2 relative bg-[#00020a] text-white rounded-full border-[1px] border-gray-800">
         <Link href="" className="px-3">

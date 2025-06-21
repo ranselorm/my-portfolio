@@ -15,7 +15,7 @@
     @apply text-xl font-medium text-primary;
   }
   .section-padding {
-    @apply px-4 md:px-36 py-12;
+    @apply px-4 md:px-36;
   }
 }
 

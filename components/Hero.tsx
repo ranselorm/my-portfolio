@@ -6,11 +6,10 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 const Hero: React.FC = () => {
   return (
     <section className="bg-[#f9f9f9] py-20 font-primary flex items-center justify-center section-padding text-white">
-      {/* <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8">
+      <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8">
         <div className="text-center md:text-left flex-1 flex flex-col space-y-5">
-          <h3 className="text-[80px] font-mont font-bold text-black">
-            Randy S.
-          </h3>
+          {/* <h3 className="text-[80px] font-hero text-black">Randy S.</h3> */}
+          <p className="text-black text-3xl">creative</p>
           <p className="text-xl w-full md:max-w-5xl">
             Specialized in MERN Stack, I welcome you to my world of innovative
             web applications development. Let's create something great together!
@@ -36,7 +35,7 @@ const Hero: React.FC = () => {
           </div>
           <Social />
         </main>
-      </div> */}
+      </div>
     </section>
   );
 };

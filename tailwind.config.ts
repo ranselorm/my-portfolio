@@ -5,7 +5,6 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -26,6 +25,7 @@ module.exports = {
         mont: ["Montserrat", "sans-serif"],
         pure: ["puremechanic", "sans-serif"],
         nunito: ["Nunito", "sans-serif"],
+        hero: ["VisueltPro-Regular", "sans-serif"],
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out forwards",

@@ -25,6 +25,11 @@ const puremechanic = localFont({
   variable: "--font-pure",
   weight: "100 900",
 });
+const hero = localFont({
+  src: "./fonts/VisueltPro-Regular.woff",
+  variable: "--font-pure",
+  weight: "100 900",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -39,7 +44,7 @@ export default function RootLayout({
   return (
     <html>
       <body
-        className={`${Aeonik.variable} ${Rubik.variable} ${Montserrat.variable} ${puremechanic.variable}} antialiased`}
+        className={`${Aeonik.variable} ${Rubik.variable} ${Montserrat.variable} ${puremechanic.variable} ${hero.variable}} antialiased`}
       >
         <SheetProvider>
           {children}

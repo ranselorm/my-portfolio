@@ -6,24 +6,6 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import { motion } from "framer-motion";
 
 const Hero: React.FC = () => {
-  const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
   return (
     <section className="bg-grey py-20 font-primary flex items-center justify-center section-padding">
       <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 z-10">
@@ -36,13 +18,6 @@ const Hero: React.FC = () => {
             Specialized in MERN Stack, I welcome you to my world of innovative
             web applications development. Let's create something great together!
           </p>
-          {/* <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
-            <Button
-              label="Portfolio"
-              variant="secondary"
-              icon="pepicons-pencil:arrow-up-right"
-            />
-          </div> */}
           <div className="flex items-center cursor-pointer w-max">
             <div className="w-8 h-8 bg-gray-300 rounded-full" />
             <p className="text-xs -ml-4 font-black font-mont">SEE MY WORKS</p>
@@ -50,7 +25,7 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <motion.div className="flex" variants={itemVariants}>
+        <motion.div className="flex">
           <div className="relative w-[400px] h-[400px]">
             <div className="absolute inset-0 bg-primary rounded-xl transform translate-x-10 translate-y-10 z-0">
               <img

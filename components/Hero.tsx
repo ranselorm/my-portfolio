@@ -1,12 +1,32 @@
+"use client";
 import Button from "@/components/Button";
 import CurvedCard from "./curved/CurvedCard";
 import Social from "./Social";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { motion } from "framer-motion";
 
 const Hero: React.FC = () => {
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
     <section className="bg-grey py-20 font-primary flex items-center justify-center section-padding">
-      <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8">
+      <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 z-10">
         <div className="text-center md:text-left flex-1 flex flex-col space-y-5">
           {/* <h3 className="text-[80px] font-hero text-black">Randy S.</h3> */}
           <p className="text-black text-4xl font-hero font-bold tracking-widest leading-relaxed">
@@ -30,20 +50,25 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <main className="flex-1 flex items-center justify-center gap-x-20 bg-red-400 h-[400px]">
-          {/* <div className="relative md:w-[350px]">
-            <CurvedCard src="/images/passport.jpg" />
-            <div className="w-24 h-24 bg-primary absolute -bottom-2 right-6 z-10 rounded-full flex items-center justify-center">
-              <Icon
-                icon="fluent:arrow-up-right-28-regular"
-                className="text-5xl text-white"
+        <motion.div className="flex" variants={itemVariants}>
+          <div className="relative w-[400px] h-[400px]">
+            <div className="absolute inset-0 bg-primary rounded-xl transform translate-x-10 translate-y-10 z-0">
+              <img
+                src="/images/bg.svg"
+                alt="Background"
+                className="w-full h-full object-cover rounded-xl opacity-15"
               />
             </div>
-          </div> */}{" "}
-          he
-          {/* <Social /> */}
-        </main>
+
+            <img
+              src="https://images.pexels.com/photos/10101138/pexels-photo-10101138.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt=""
+              className="w-full h-full object-cover rounded-xl relative z-10"
+            />
+          </div>
+        </motion.div>
       </div>
+      {/* <div className="w-[450px] h-[450px] bg-white absolute rounded-full" /> */}
     </section>
   );
 };

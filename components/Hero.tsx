@@ -11,8 +11,9 @@ const Hero: React.FC = () => {
       <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 z-10">
         <div className="text-center md:text-left flex-1 flex flex-col space-y-5">
           {/* <h3 className="text-[80px] font-hero text-black">Randy S.</h3> */}
-          <p className="text-black text-4xl font-hero font-bold tracking-widest leading-relaxed">
-            creative designer <br />& developer
+          <p className="text-black text-4xl font-hero font-bold tracking-widest leading-relaxed capitalize">
+            fullstack engineer <br />&{" "}
+            <span className="text-primary">developer</span>
           </p>
           <p className="text-lg w-full md:max-w-5xl font-hero ">
             Specialized in MERN Stack, I welcome you to my world of innovative

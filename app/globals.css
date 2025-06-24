@@ -24,3 +24,19 @@
     --radius: 0.5rem;
   }
 }
+
+.hexagon {
+  width: 300px;
+  height: auto;
+  /* define your hexagon */
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  /* for better edge smoothing */
+  -webkit-clip-path: polygon(
+    25% 5%,
+    75% 5%,
+    100% 50%,
+    75% 95%,
+    25% 95%,
+    0% 50%
+  );
+}

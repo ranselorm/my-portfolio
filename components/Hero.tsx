@@ -4,6 +4,7 @@ import CurvedCard from "./curved/CurvedCard";
 import Social from "./Social";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { motion } from "framer-motion";
+import HexImage from "./HexImage";
 
 const Hero: React.FC = () => {
   return (
@@ -27,7 +28,7 @@ const Hero: React.FC = () => {
         </div>
 
         <motion.div className="flex">
-          <div className="relative w-[400px] h-[400px]">
+          {/* <div className="relative w-[400px] h-[400px]">
             <div className="absolute inset-0 bg-primary rounded-xl transform translate-x-10 translate-y-10 z-0">
               <img
                 src="/images/bg.svg"
@@ -41,7 +42,8 @@ const Hero: React.FC = () => {
               alt=""
               className="w-full h-full object-cover rounded-xl relative z-10"
             />
-          </div>
+          </div> */}
+          <HexImage />
         </motion.div>
       </div>
       {/* <div className="w-[450px] h-[450px] bg-white absolute rounded-full" /> */}

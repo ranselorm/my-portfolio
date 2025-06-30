@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.9, ease: "easeOut" }}
-      className="text-black py-4 section-padding font-mont bg-grey"
+      className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-opacity-70 text-black py-4 section-padding font-mont"
     >
       <div className="container mx-auto max-w-3xl flex justify-between items-center px-2 py-2 relative bg-[#00020a] text-white rounded-full border-[1px] border-gray-800">
         <Link href="" className="px-3">
@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
 
         <div className="hidden md:flex space-x-4 z-10 font-medium">
           {leftNavLinks.map((link, index) => (
-            <Link href="#" className="px-5 py-2" key={index}>
+            <Link href={link.href} className="px-5 py-2" key={index}>
               {link.label}
             </Link>
           ))}

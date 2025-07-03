@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Hero: React.FC = () => {
   return (
-    <section className="bg-grey py-20 font-primary flex items-center justify-center section-padding">
+    <section className="bg-grey py-20 font-primary flex items-center justify-center section-padding h-screen ">
       <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 z-10">
         <div className="text-center md:text-left flex-1 flex flex-col space-y-5">
           {/* <h3 className="text-[80px] font-hero text-black">Randy S.</h3> */}
@@ -40,6 +40,10 @@ const Hero: React.FC = () => {
               className="w-full h-full object-cover rounded-xl relative z-10"
             />
           </div> */}
+          <img
+            src="https://images.unsplash.com/photo-1750800663834-ccebf03881c9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDV8fHxlbnwwfHx8fHw%3D"
+            className="w-[70%] md:w-[400px] h-[400px] object-cover rounded-xl shadow-lg"
+          />
         </motion.div>
       </div>
       {/* <div className="w-[450px] h-[450px] bg-white absolute rounded-full" /> */}

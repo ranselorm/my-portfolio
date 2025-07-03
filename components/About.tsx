@@ -41,7 +41,7 @@ const About = () => {
 
   return (
     <motion.section
-      className="section-padding bg-white font-primary"
+      className="section-padding bg-white font-primary py-12"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
@@ -50,6 +50,16 @@ const About = () => {
         className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-12"
         variants={containerVariants}
       >
+        <motion.div className="flex" variants={itemVariants}>
+          <div className="relative w-[400px] h-[400px]">
+            <img
+              src="https://images.pexels.com/photos/10101138/pexels-photo-10101138.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt=""
+              className="w-full h-full object-cover rounded-xl relative z-10"
+            />
+          </div>
+        </motion.div>
+        {/* article */}
         <motion.div className="md:max-w-xl" variants={containerVariants}>
           <h3 className="text-2xl font-bold mb-4">About me</h3>
           <p className="leading-normal text-gray-900 mb-4 text-lg">
@@ -80,23 +90,6 @@ const About = () => {
               </div>
             ))}
           </Marquee>
-        </motion.div>
-        <motion.div className="flex" variants={itemVariants}>
-          <div className="relative w-[400px] h-[400px]">
-            <div className="absolute inset-0 bg-primary rounded-xl transform translate-x-10 translate-y-10 z-0">
-              <img
-                src="/images/bg.svg"
-                alt="Background"
-                className="w-full h-full object-cover rounded-xl opacity-15"
-              />
-            </div>
-
-            <img
-              src="https://images.pexels.com/photos/10101138/pexels-photo-10101138.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt=""
-              className="w-full h-full object-cover rounded-xl relative z-10"
-            />
-          </div>
         </motion.div>
       </motion.div>
     </motion.section>

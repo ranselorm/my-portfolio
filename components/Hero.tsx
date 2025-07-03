@@ -1,7 +1,5 @@
 "use client";
-import Button from "@/components/Button";
-import CurvedCard from "./curved/CurvedCard";
-import Social from "./Social";
+
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { motion } from "framer-motion";
 

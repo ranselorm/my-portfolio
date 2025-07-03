@@ -7,8 +7,7 @@ const Hero: React.FC = () => {
   return (
     <section className="bg-grey py-20 font-primary flex items-center justify-center section-padding h-screen ">
       <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 z-10">
-        <div className="text-center md:text-left flex-1 flex flex-col space-y-5">
-          {/* <h3 className="text-[80px] font-hero text-black">Randy S.</h3> */}
+        <div className="text-center md:text-left flex-1 flex flex-col space-y-8">
           <p className="text-black text-4xl font-hero font-bold tracking-widest leading-relaxed capitalize">
             fullstack engineer <br />&{" "}
             <span className="text-primary">developer</span>

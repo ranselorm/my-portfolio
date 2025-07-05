@@ -6,7 +6,7 @@ const AboutMe = () => {
       <div className="container mx-auto">
         <div className="flex items-center gap-4 w-[70%] mx-auto">
           <div className="w-2/4 space-y-3">
-            <div className="bg-[#dfdfe2] shadow-sm w-full h-[250px] rounded-md">
+            <div className="bg-white shadow-sm w-full h-[250px] rounded-md">
               1
             </div>
             <div className="bg-[#e3e5ff] w-full h-[250px] rounded-md">2</div>

@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -100, opacity: 0 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
-          className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-opacity-70 text-white py-4 section-padding font-mont"
+          className="fixed top-0 left-0 w-full z-50 bg-opacity-70 text-white py-4 section-padding font-mont"
         >
           <div className="container mx-auto max-w-3xl flex justify-between items-center px-2 py-2 relative bg-black text-white rounded-full border-[1px] border-gray-800">
             <Link href="" className="px-3">

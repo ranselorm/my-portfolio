@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -14,23 +14,39 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(
+    null
+  );
 
-  // Scroll listener
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY && currentScrollY > 60) {
-        setShowNavbar(false); // scrolling down
-      } else {
-        setShowNavbar(true); // scrolling up
-      }
-      setLastScrollY(currentScrollY);
+
+      // Only trigger if scroll exceeds threshold (e.g., 10px)
+      if (Math.abs(currentScrollY - lastScrollY) < 10) return;
+
+      // Clear previous timeout
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+
+      // Delay before reacting
+      const timeout = setTimeout(() => {
+        if (currentScrollY > lastScrollY && currentScrollY > 60) {
+          setShowNavbar(false); // scroll down
+        } else {
+          setShowNavbar(true); // scroll up
+        }
+        setLastScrollY(currentScrollY);
+      }, 100); // 100ms debounce
+
+      setScrollTimeout(timeout);
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+    return () => {
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY, scrollTimeout]);
 
   return (
     <AnimatePresence>

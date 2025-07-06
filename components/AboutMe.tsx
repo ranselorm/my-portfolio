@@ -2,9 +2,10 @@
 
 import React, { useState } from "react";
 import { Button, Modal } from "antd";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 const AboutMe = () => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -35,7 +36,16 @@ const AboutMe = () => {
                   solutions and continuously learning new technologies to stay
                   ahead in the industry.
                 </p>
-                <p></p>
+                <div
+                  className="flex items-center cursor-pointer w-max"
+                  onClick={showModal}
+                >
+                  <div className="w-8 h-8 bg-gray-300 rounded-full" />
+                  <p className="text-xs -ml-4 font-black font-mont">
+                    SEE MY WORKS
+                  </p>
+                  <Icon icon="radix-icons:arrow-right" className="ml-3" />
+                </div>
               </div>
               <div className="bg-[#e3e5ff] w-full h-[250px] rounded-md">
                 <div className="flex items-center justify-center h-full"></div>
@@ -83,3 +93,5 @@ const AboutMe = () => {
 };
 
 export default AboutMe;
+
+// npm install react@18 react-dom@18

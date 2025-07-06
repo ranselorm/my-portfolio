@@ -21,7 +21,7 @@ const AboutMe = () => {
               <h2 className="text-base font-bold text-black">Randy Selorm</h2>
               {/* <p className="text-sm text-gray-600">Fullstack Developer</p> */}
               <a href="mailto:selorm@berthengineering.com" className="text-sm">
-                selorm@berthengineering
+                selorm@berthengineering.com
               </a>
             </div>
 

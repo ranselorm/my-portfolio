@@ -48,7 +48,18 @@ const AboutMe = () => {
                 </div>
               </div>
               <div className="bg-[#e3e5ff] w-full h-[250px] rounded-md">
-                <div className="flex items-center justify-center h-full"></div>
+                <div className="flex items-center justify-center h-full">
+                  <iframe
+                    style={{ borderRadius: "12px" }}
+                    src="https://open.spotify.com/embed/playlist/37i9dQZF1EIV4HJn3YejpP?utm_source=generator"
+                    width="100%"
+                    height="352"
+                    frameBorder="0"
+                    allowFullScreen
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                  ></iframe>
+                </div>
               </div>
             </div>
             <div className="w-2/4 rounded-md h-[512px] border border-primary flex flex-col items-center justify-center gap-8 p-4">

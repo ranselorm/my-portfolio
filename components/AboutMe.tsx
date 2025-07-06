@@ -6,8 +6,20 @@ const AboutMe = () => {
       <div className="container mx-auto">
         <div className="flex flex-row-reverse items-center gap-4 w-[70%] mx-auto">
           <div className="w-2/4 space-y-3">
-            <div className="border border-primary shadow-sm w-full h-[250px] rounded-md p-4 flex items-center justify-center flex-col gap-4"></div>
-            <div className="bg-[#e3e5ff] w-full h-[250px] rounded-md">2</div>
+            <div className="border border-primary shadow-sm w-full h-[250px] rounded-md p-4 flex justify-center flex-col gap-4">
+              <h3>About Me</h3>
+              <p className="text-gray-600 text-sm font-medium leading-tightest">
+                I am a Fullstack Developer with a passion for building scalable
+                web applications and engaging user experiences. Currently, I am
+                focused on enhancing my skills in React and Node.js. <br />
+                <br />I enjoy collaborating with teams to create innovative
+                solutions and continuously learning new technologies to stay
+                ahead in the industry.
+              </p>
+            </div>
+            <div className="bg-[#e3e5ff] w-full h-[250px] rounded-md">
+              <div className="flex items-center justify-center h-full"></div>
+            </div>
           </div>
           <div className="w-2/4 rounded-md h-[512px] border border-primary flex flex-col items-center justify-center gap-8 p-4">
             <div className="w-56 rounded-md overflow-hidden">
@@ -20,7 +32,10 @@ const AboutMe = () => {
             <div className="text-center space-y-2 font-hero">
               <h2 className="text-base font-bold text-black">Randy Selorm</h2>
               {/* <p className="text-sm text-gray-600">Fullstack Developer</p> */}
-              <a href="mailto:selorm@berthengineering.com" className="text-sm">
+              <a
+                href="mailto:selorm@berthengineering.com"
+                className="text-sm text-gray-500"
+              >
                 selorm@berthengineering.com
               </a>
             </div>

@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
           setShowNavbar(true); // scroll up
         }
         setLastScrollY(currentScrollY);
-      }, 100); // 100ms debounce
+      }, 150); // 100ms debounce
 
       setScrollTimeout(timeout);
     };

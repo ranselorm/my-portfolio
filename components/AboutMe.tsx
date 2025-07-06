@@ -23,9 +23,22 @@ const AboutMe = () => {
     <>
       <div className="section-padding bg-grey font-primary py-12">
         <div className="container mx-auto">
-          <div className="flex flex-row-reverse items-center gap-4 w-[70%] mx-auto">
-            <div className="w-2/4 space-y-3">
-              <div className="border border-primary shadow-sm w-full h-[250px] rounded-md p-4 flex justify-center flex-col gap-4">
+          <div className="flex flex-row-reverse items-center gap-4 w-[100%] mx-auto">
+            <div className="bg-[#e3e5ff] h-[250px] w-1/3 rounded-md">
+              <div className="flex items-center justify-center h-full">
+                <iframe
+                  style={{ borderRadius: "12px" }}
+                  src="https://open.spotify.com/embed/playlist/37i9dQZF1EIV4HJn3YejpP?utm_source=generator"
+                  width="100%"
+                  height="512"
+                  allowFullScreen
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
+            <div className="w-1/3 space-y-3">
+              <div className="border border-primary w-full h-[250px] rounded-md p-4 flex justify-center flex-col gap-4">
                 <h3>About Me</h3>
                 <p className="text-gray-600 text-sm font-medium leading-tightest">
                   I am a Fullstack Developer with a passion for building
@@ -47,22 +60,13 @@ const AboutMe = () => {
                   <Icon icon="radix-icons:arrow-right" className="ml-3" />
                 </div>
               </div>
-              <div className="bg-[#e3e5ff] w-full h-[250px] rounded-md">
-                <div className="flex items-center justify-center h-full">
-                  <iframe
-                    style={{ borderRadius: "12px" }}
-                    src="https://open.spotify.com/embed/playlist/37i9dQZF1EIV4HJn3YejpP?utm_source=generator"
-                    width="100%"
-                    height="352"
-                    frameBorder="0"
-                    allowFullScreen
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    loading="lazy"
-                  ></iframe>
+              <div className="w-full h-[250px] rounded-md border border-primary">
+                <div className="flex w-full items-center justify-center h-full">
+                  2
                 </div>
               </div>
             </div>
-            <div className="w-2/4 rounded-md h-[512px] border border-primary flex flex-col items-center justify-center gap-8 p-4">
+            <div className="w-1/3 rounded-md h-[512px] border border-primary flex flex-col items-center justify-center gap-8 p-4">
               <div className="w-56 rounded-md overflow-hidden">
                 <img
                   src="/images/profile.jpg"

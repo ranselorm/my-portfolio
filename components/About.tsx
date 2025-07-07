@@ -62,7 +62,10 @@ const About = () => {
         {/* article */}
         <motion.div className="md:max-w-xl" variants={containerVariants}>
           <h3 className="text-xl font-semibold mb-4">About Me</h3>
-
+          <p className="text-sm">
+            <Icon icon="proicons:open" />
+            Open to work
+          </p>
           <p className="leading-normal text-gray-800 mb-4 text-base">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
             eveniet! Dicta exercitationem sequi vero ab, illum laborum enim modi

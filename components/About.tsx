@@ -61,8 +61,8 @@ const About = () => {
         </motion.div>
         {/* article */}
         <motion.div className="md:max-w-xl" variants={containerVariants}>
-          <h3 className="text-xl font-semibold mb-4">About Me</h3>
-          <p className="text-sm">
+          <h3 className="text-xl font-semibold mb-1">About Me</h3>
+          <p className="text-xs flex items-center gap-1 text-primary mb-4">
             <Icon icon="proicons:open" />
             Open to work
           </p>

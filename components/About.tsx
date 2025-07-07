@@ -104,7 +104,7 @@ const About = () => {
             <div className="w-8 h-8 bg-gray-300 rounded-full absolute left-0 transition-all duration-500 group-hover:left-[calc(100%-2rem)]" />
 
             {/* Text */}
-            <p className="text-xs ml-4 font-black font-mont z-10">
+            <p className="text-xs ml-4 font-black font-mont z-10 transition-all duration-500 group-hover:text-gray-600">
               SEE MY WORKS
             </p>
 

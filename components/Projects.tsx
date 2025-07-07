@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { Modal } from "antd";
+import "antd/dist/reset.css"; // Reset default Ant Design styles (optional if already set)
 
 // ===================== //
 // TYPES & DATA          //
@@ -16,68 +18,71 @@ const allProjects: Project[] = [
   {
     title: "Portfolio Website",
     category: "Website",
-    image: "/projects/site1.jpg",
+    image: "/images/project1.jpeg",
   },
   {
     title: "Ecommerce Web App",
     category: "WebApp",
-    image: "/projects/webapp1.jpg",
+    image: "/images/project2.jpg",
   },
   {
     title: "Landing Page - Product",
     category: "Landing",
-    image: "/projects/landing1.jpg",
+    image: "/images/project3.jpg",
   },
   {
     title: "Mobile Banking App",
     category: "Mobile",
-    image: "/projects/mobile1.jpg",
+    image: "/images/project4.jpg",
   },
-  { title: "Agency Site", category: "Website", image: "/projects/site2.jpg" },
+  { title: "Agency Site", category: "Website", image: "/images/project5.jpg" },
   {
     title: "Food Delivery Web App",
     category: "WebApp",
-    image: "/projects/webapp2.jpg",
-  },
-  {
-    title: "iOS Fitness App",
-    category: "Mobile",
-    image: "/projects/mobile2.jpg",
+    image: "/images/project6.jpg",
   },
 ];
 
 const categories = ["All", "Landing", "Website", "WebApp", "Mobile"] as const;
-
 type Category = (typeof categories)[number];
 
-// ===================== //
-// MAIN COMPONENT        //
-// ===================== //
 const Projects = () => {
   const [active, setActive] = useState<Category>("All");
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const filtered =
     active === "All"
       ? allProjects
       : allProjects.filter((p) => p.category === active);
 
+  const openModal = (project: Project) => {
+    setSelectedProject(project);
+    setModalOpen(true);
+  };
+
   return (
-    <section className="py-20 section-padding">
+    <section className="py-12 section-padding font-hero">
       <div className="container mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">Projects</h2>
+        <div>
+          <h3 className="text-lg font-semibold mb-2">Portfolio</h3>
+          <p className="text-base text-center gap-1 mb-7">
+            Take a peek at my portfolio. It's where pixels and functionality
+            have <br /> a party on the web!
+          </p>
+        </div>
 
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActive(cat)}
-              className={`px-4 py-2 rounded-full border transition-all text-sm font-medium
-                ${
-                  active === cat
-                    ? "bg-primary text-white border-primary"
-                    : "border-gray-300 text-gray-600 hover:bg-gray-100"
-                }`}
+              className={`px-2 transition-all text-sm font-medium border-b ${
+                active === cat
+                  ? "border-primary text-gray-700"
+                  : "border-transparent text-gray-700 hover:border-primary"
+              }`}
             >
               {cat}
             </button>
@@ -92,16 +97,17 @@ const Projects = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+            className="flex flex-wrap justify-center gap-8"
           >
             {filtered.map((project, i) => (
               <motion.div
                 key={i}
-                className="bg-white shadow-lg rounded-lg overflow-hidden border"
+                className="bg-white w-[300px] h-[300px] shadow-lg rounded-lg overflow-hidden border flex flex-col cursor-pointer"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
+                onClick={() => openModal(project)}
               >
-                <div className="relative w-full h-48">
+                <div className="relative w-full h-48 bg-gray-100">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -109,7 +115,7 @@ const Projects = () => {
                     className="object-cover"
                   />
                 </div>
-                <div className="p-4">
+                <div className="p-4 text-center mt-auto">
                   <h4 className="text-lg font-semibold">{project.title}</h4>
                   <p className="text-xs mt-1 text-gray-500">
                     {project.category}
@@ -119,6 +125,33 @@ const Projects = () => {
             ))}
           </motion.div>
         </AnimatePresence>
+
+        {/* AntD Modal */}
+        <Modal
+          open={modalOpen}
+          footer={null}
+          onCancel={() => setModalOpen(false)}
+          centered
+          width={600}
+          title={selectedProject?.title}
+        >
+          {selectedProject && (
+            <div className="flex flex-col items-center gap-4">
+              <div className="relative w-full h-64 rounded-md overflow-hidden">
+                <Image
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <p className="text-sm text-gray-600">
+                Category: {selectedProject.category}
+              </p>
+              {/* Add more detail here if needed */}
+            </div>
+          )}
+        </Modal>
       </div>
     </section>
   );

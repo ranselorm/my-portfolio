@@ -49,7 +49,7 @@ const SkillBar = ({ name, level }: { name: string; level: number }) => {
       initial={{ opacity: 0, x: 50 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
-      viewport={{ once: false }}
+      viewport={{ once: true }}
     >
       <div className="flex justify-between mb-1">
         <span className="text-sm font-medium">{name}</span>

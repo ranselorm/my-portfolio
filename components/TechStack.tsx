@@ -24,13 +24,13 @@ const TechGrid: React.FC<TechGridProps> = ({ title, items }) => {
         {items.map((tech, i) => (
           <motion.div
             key={i}
-            className="flex flex-col items-center justify-center space-y-2 rounded-md h-[80px]"
+            className="flex flex-col items-center justify-center space-y-2 rounded-md h-[80px] bg-white"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: i * 0.1 }}
             viewport={{ once: false }}
           >
-            <Icon icon={tech.icon} className="text-4xl" />
+            <Icon icon={tech.icon} className="text-3xl" />
             <p className="text-xs">{tech.title}</p>
           </motion.div>
         ))}
@@ -55,14 +55,16 @@ const SkillBar = ({ name, level }: { name: string; level: number }) => {
         <span className="text-sm font-medium">{name}</span>
         <span className="text-sm">{level}%</span>
       </div>
-      <div className="w-full h-2 bg-gray-200 rounded">
-        <motion.div
-          className="h-full bg-primary rounded"
-          initial={{ width: 0 }}
-          whileInView={{ width: `${level}%` }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-        />
+      <div>
+        <div className="w-full h-2 bg-white rounded">
+          <motion.div
+            className="h-full bg-primary rounded"
+            initial={{ width: 0 }}
+            whileInView={{ width: `${level}%` }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          />
+        </div>
       </div>
     </motion.div>
   );
@@ -106,7 +108,7 @@ const TechStack = () => {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section className="py-12 section-padding font-hero" ref={ref}>
+    <section className="py-12 section-padding font-hero bg-grey" ref={ref}>
       <div className="container mx-auto text-center">
         <motion.div
           className="text-center mx-auto mb-10"

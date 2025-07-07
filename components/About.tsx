@@ -41,7 +41,7 @@ const About = () => {
 
   return (
     <motion.section
-      className="section-padding bg-grey font-hero py-12"
+      className="section-padding font-hero py-12"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}

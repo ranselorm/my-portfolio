@@ -5,14 +5,18 @@ import { motion } from "framer-motion";
 
 const Hero: React.FC = () => {
   return (
-    <section className="py-20 font-primary flex items-center justify-center section-padding h-screen ">
+    <section className="py-20 font-primary flex items-center justify-center section-padding h-screen bg-grey">
       <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 z-10">
         <div className="text-center md:text-left flex-1 flex flex-col space-y-8">
           <p className="text-black text-4xl font-hero font-bold tracking-widest leading-relaxed capitalize">
             fullstack engineer <br />&{" "}
             <span className="text-primary">developer</span>
           </p>
-          <p className="text-lg w-full md:max-w-5xl font-hero ">
+          <p className="text-base w-full md:max-w-5xl font-hero text-gray-700">
+            Specialized in MERN Stack, I welcome you to my world of innovative
+            web applications development. Let's create something great together!
+          </p>
+          <p className="text-base w-full md:max-w-5xl font-hero text-gray-700">
             Specialized in MERN Stack, I welcome you to my world of innovative
             web applications development. Let's create something great together!
           </p>

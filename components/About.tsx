@@ -61,24 +61,25 @@ const About = () => {
         </motion.div>
         {/* article */}
         <motion.div className="md:max-w-xl" variants={containerVariants}>
-          <h3 className="text-xl font-semibold mb-1">About Me</h3>
+          <h3 className="text-lg font-semibold mb-1">About Me</h3>
           <p className="text-xs flex items-center gap-1 text-primary mb-4">
             <Icon icon="proicons:open" />
             Open to work
           </p>
-          <p className="leading-normal text-gray-800 mb-4 text-base">
+          <p className="leading-normal text-gray-700 mb-4 text-base">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
             eveniet! Dicta exercitationem sequi vero ab, illum laborum enim modi
             provident a mollitia, velit sit! Voluptatibus accusantium obcaecati
             quisquam enim nam! Lorem ipsum dolor sit amet consectetur
           </p>
-          <p className="leading-normal text-gray-800 mb-4 text-base">
+          <p className="leading-normal text-gray-700 mb-4 text-base">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
             eveniet! Dicta exercitationem sequi vero ab, illum laborum enim modi
             provident a mollitia, velit sit! Voluptatibus accusantium obcaecati
             quisquam enim nam! Lorem ipsum dolor sit amet consectetur
           </p>
-          <p className="leading-normal text-gray-800 mb-4 text-base">
+
+          <p className="leading-normal text-gray-700 mb-4 text-base">
             My Toolkit includesReact.js | Next.js | JavaScript | TypeScript |
             HTML | CSS | Tailwind CSS | Node.js | Express.js | Restful APIs |
             MongoDB | Git{" "}

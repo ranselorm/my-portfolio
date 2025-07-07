@@ -1,9 +1,10 @@
 // sections/TechStack.tsx
 
+import { Icon } from "@iconify/react/dist/iconify.js";
 import React from "react";
 
 type TechItem = {
-  name: string;
+  title: string;
   icon: string;
 };
 
@@ -19,8 +20,9 @@ const TechGrid: React.FC<TechGridProps> = ({ title, items }) => {
       <div className="grid grid-cols-3 sm:grid-cols-4 gap-6">
         {items.map((tech, i) => (
           <div key={i} className="flex flex-col items-center space-y-2">
-            <img src={tech.icon} alt={tech.name} className="w-10 h-10" />
-            <p className="text-sm">{tech.name}</p>
+            {/* <img src={tech.icon} alt={tech.title} className="w-10 h-10" /> */}
+            <Icon icon={tech.icon} />
+            <p className="text-sm">{tech.title}</p>
           </div>
         ))}
       </div>
@@ -29,25 +31,25 @@ const TechGrid: React.FC<TechGridProps> = ({ title, items }) => {
 };
 
 const frontendTech = [
-  { name: "React", icon: "/icons/react.svg" },
-  { name: "Next.js", icon: "/icons/nextjs.svg" },
-  { name: "Vue.js", icon: "/icons/vue.svg" },
-  { name: "Tailwind CSS", icon: "/icons/tailwind.svg" },
-  { name: "Bootstrap", icon: "/icons/bootstrap.svg" },
-  { name: "SASS", icon: "/icons/sass.svg" },
-  { name: "HTML", icon: "/icons/html.svg" },
-  { name: "CSS", icon: "/icons/css.svg" },
+  { title: "Javascript", icon: "devicon:javascript" },
+  { title: "Typescript", icon: "devicon:typescript" },
+  { title: "React", icon: "skill-icons:react-dark" },
+  { title: "Next", icon: "skill-icons:nextjs-light" },
+  { title: "Tailwind", icon: "skill-icons:tailwindcss-dark" },
+  { title: "HTML5", icon: "skill-icons:html" },
+  { title: "CSS3", icon: "skill-icons:css" },
+  { title: "Python", icon: "skill-icons:python-dark" },
 ];
 
 const backendTech = [
-  { name: "Node.js", icon: "/icons/nodejs.svg" },
-  { name: "Express.js", icon: "/icons/express.svg" },
-  { name: "MongoDB", icon: "/icons/mongodb.svg" },
-  { name: "MySQL", icon: "/icons/mysql.svg" },
-  { name: "PostgreSQL", icon: "/icons/postgresql.svg" },
-  { name: "Firebase", icon: "/icons/firebase.svg" },
-  { name: "Python", icon: "/icons/python.svg" },
-  { name: "PHP", icon: "/icons/php.svg" },
+  { title: "Javascript", icon: "devicon:javascript" },
+  { title: "Typescript", icon: "devicon:typescript" },
+  { title: "React", icon: "skill-icons:react-dark" },
+  { title: "Next", icon: "skill-icons:nextjs-light" },
+  { title: "Tailwind", icon: "skill-icons:tailwindcss-dark" },
+  { title: "HTML5", icon: "skill-icons:html" },
+  { title: "CSS3", icon: "skill-icons:css" },
+  { title: "Python", icon: "skill-icons:python-dark" },
 ];
 
 const TechStack = () => {

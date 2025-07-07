@@ -10,6 +10,7 @@ import Services from "@/components/Services";
 import Skills from "@/components/Skills";
 import MainHero from "../components/MainHero";
 import AboutMe from "@/components/AboutMe";
+import TechStack from "@/components/TechStack";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <TechStack />
       {/* <AboutMe /> */}
       {/* <MainHero /> */}
       {/* <HeroSection /> */}

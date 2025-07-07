@@ -16,8 +16,8 @@ export default function Home() {
     <div>
       <Navbar />
       <Hero />
-      {/* <About /> */}
-      <AboutMe />
+      <About />
+      {/* <AboutMe /> */}
       {/* <MainHero /> */}
       {/* <HeroSection /> */}
       {/* <Services /> */}

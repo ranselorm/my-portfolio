@@ -41,7 +41,7 @@ const About = () => {
 
   return (
     <motion.section
-      className="section-padding bg-white font-primary py-12"
+      className="section-padding bg-grey font-hero py-12"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
@@ -61,20 +61,21 @@ const About = () => {
         </motion.div>
         {/* article */}
         <motion.div className="md:max-w-xl" variants={containerVariants}>
-          <h3 className="text-2xl font-bold mb-4">About me</h3>
-          <p className="leading-normal text-gray-900 mb-4 text-lg">
+          <h3 className="text-xl font-semibold mb-4">About Me</h3>
+
+          <p className="leading-normal text-gray-800 mb-4 text-base">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
             eveniet! Dicta exercitationem sequi vero ab, illum laborum enim modi
             provident a mollitia, velit sit! Voluptatibus accusantium obcaecati
             quisquam enim nam! Lorem ipsum dolor sit amet consectetur
           </p>
-          <p className="leading-normal text-gray-900 text-lg mb-4">
+          <p className="leading-normal text-gray-800 mb-4 text-base">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
             eveniet! Dicta exercitationem sequi vero ab, illum laborum enim modi
             provident a mollitia, velit sit! Voluptatibus accusantium obcaecati
             quisquam enim nam! Lorem ipsum dolor sit amet consectetur
           </p>
-          <p className="leading-normal text-gray-900 text-base font-nunito">
+          <p className="leading-normal text-gray-800 mb-4 text-base">
             My Toolkit includesReact.js | Next.js | JavaScript | TypeScript |
             HTML | CSS | Tailwind CSS | Node.js | Express.js | Restful APIs |
             MongoDB | Git{" "}

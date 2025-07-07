@@ -28,7 +28,7 @@ const TechGrid: React.FC<TechGridProps> = ({ title, items }) => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: i * 0.1 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
           >
             <Icon icon={tech.icon} className="text-3xl" />
             <p className="text-xs">{tech.title}</p>

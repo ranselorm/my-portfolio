@@ -95,10 +95,22 @@ const About = () => {
               </div>
             ))}
           </Marquee> */}
-
+          {/* 
           <button className="bg-primary text-sm text-white px-4 py-2 rounded-md mt-4 hover:bg-dark transition-all duration-150 uppercase flex items-center">
             Portfolio
-          </button>
+          </button> */}
+          <div className="flex items-center cursor-pointer w-max mt-8 group relative">
+            {/* Animated Circle */}
+            <div className="w-8 h-8 bg-gray-300 rounded-full absolute left-0 transition-all duration-500 group-hover:left-[calc(100%-2rem)]" />
+
+            {/* Text */}
+            <p className="text-xs ml-4 font-black font-mont z-10">
+              SEE MY WORKS
+            </p>
+
+            {/* Arrow Icon */}
+            <Icon icon="radix-icons:arrow-right" className="ml-3 z-10" />
+          </div>
         </motion.div>
       </motion.div>
     </motion.section>

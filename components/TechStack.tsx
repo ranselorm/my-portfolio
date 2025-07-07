@@ -1,7 +1,32 @@
 // sections/TechStack.tsx
 
 import React from "react";
-import TechGrid from "@/components/TechGrid";
+
+type TechItem = {
+  name: string;
+  icon: string;
+};
+
+type TechGridProps = {
+  title: string;
+  items: TechItem[];
+};
+
+const TechGrid: React.FC<TechGridProps> = ({ title, items }) => {
+  return (
+    <div>
+      <h3 className="text-2xl font-semibold mb-6">{title}</h3>
+      <div className="grid grid-cols-3 sm:grid-cols-4 gap-6">
+        {items.map((tech, i) => (
+          <div key={i} className="flex flex-col items-center space-y-2">
+            <img src={tech.icon} alt={tech.name} className="w-10 h-10" />
+            <p className="text-sm">{tech.name}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const frontendTech = [
   { name: "React", icon: "/icons/react.svg" },

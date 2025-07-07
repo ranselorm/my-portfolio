@@ -79,7 +79,7 @@ const About = () => {
             quisquam enim nam! Lorem ipsum dolor sit amet consectetur
           </p>
 
-          <p className="leading-normal text-gray-700 mb-4 text-base">
+          {/* <p className="leading-normal text-gray-700 mb-4 text-base">
             My Toolkit includesReact.js | Next.js | JavaScript | TypeScript |
             HTML | CSS | Tailwind CSS | Node.js | Express.js | Restful APIs |
             MongoDB | Git{" "}
@@ -94,7 +94,11 @@ const About = () => {
                 <Icon icon={skill.icon} />
               </div>
             ))}
-          </Marquee>
+          </Marquee> */}
+
+          <button className="bg-primary text-sm text-white px-4 py-2 rounded-md mt-4 hover:bg-dark transition-all duration-150 uppercase flex items-center">
+            Portfolio
+          </button>
         </motion.div>
       </motion.div>
     </motion.section>

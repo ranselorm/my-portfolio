@@ -19,10 +19,12 @@ const TechGrid: React.FC<TechGridProps> = ({ title, items }) => {
       <h3 className="text-2xl font-semibold mb-6">{title}</h3>
       <div className="grid grid-cols-3 sm:grid-cols-4 gap-6">
         {items.map((tech, i) => (
-          <div key={i} className="flex flex-col items-center space-y-2">
-            {/* <img src={tech.icon} alt={tech.title} className="w-10 h-10" /> */}
-            <Icon icon={tech.icon} />
-            <p className="text-sm">{tech.title}</p>
+          <div
+            key={i}
+            className="flex flex-col items-center justify-center space-y-2 bg-grey rounded-md h-[80px]"
+          >
+            <Icon icon={tech.icon} className="text-3xl" />
+            <p className="text-xs">{tech.title}</p>
           </div>
         ))}
       </div>
@@ -54,11 +56,11 @@ const backendTech = [
 
 const TechStack = () => {
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-4 text-center">
+    <section className="py-12 section-padding">
+      <div className="container mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-10">Tech Stack</h2>
 
-        <div className="grid md:grid-cols-2 gap-10 text-left">
+        <div className="grid md:grid-cols-2 gap-32 text-left">
           <TechGrid title="Frontend" items={frontendTech} />
           <TechGrid title="Backend" items={backendTech} />
         </div>

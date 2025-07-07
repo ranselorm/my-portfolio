@@ -19,18 +19,18 @@ type TechGridProps = {
 const TechGrid: React.FC<TechGridProps> = ({ title, items }) => {
   return (
     <div>
-      <h3 className="text-2xl font-semibold mb-6">{title}</h3>
-      <div className="grid grid-cols-3 sm:grid-cols-4 gap-6">
+      {/* <h3 className="text-2xl font-semibold mb-6">{title}</h3> */}
+      <div className="grid grid-cols-3 sm:grid-cols-4 gap-6 font-hero">
         {items.map((tech, i) => (
           <motion.div
             key={i}
-            className="flex flex-col items-center justify-center space-y-2 bg-grey rounded-md h-[80px]"
+            className="flex flex-col items-center justify-center space-y-2 rounded-md h-[80px]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: i * 0.1 }}
             viewport={{ once: false }}
           >
-            <Icon icon={tech.icon} className="text-3xl" />
+            <Icon icon={tech.icon} className="text-4xl" />
             <p className="text-xs">{tech.title}</p>
           </motion.div>
         ))}
@@ -77,22 +77,25 @@ const frontendTech = [
   { title: "React", icon: "skill-icons:react-dark" },
   { title: "Next", icon: "skill-icons:nextjs-light" },
   { title: "Tailwind", icon: "skill-icons:tailwindcss-dark" },
+  { title: "Firebase", icon: "devicon:firebase" },
+  { title: "Express", icon: "devicon:express" },
+  { title: "Node", icon: "devicon:nodejs" },
   { title: "HTML5", icon: "skill-icons:html" },
   { title: "CSS3", icon: "skill-icons:css" },
-  { title: "Python", icon: "skill-icons:python-dark" },
-  { title: "Tailwind", icon: "skill-icons:tailwindcss-dark" },
-  { title: "HTML5", icon: "skill-icons:html" },
-  { title: "CSS3", icon: "skill-icons:css" },
-  { title: "Python", icon: "skill-icons:python-dark" },
+
+  { title: "Git", icon: "devicon:git" },
+  { title: "Postman", icon: "skill-icons:postman" },
 ];
 
 const backendSkills = [
-  { name: "Node.js", level: 90 },
-  { name: "Express", level: 85 },
-  { name: "MongoDB", level: 80 },
-  { name: "PostgreSQL", level: 75 },
-  { name: "Firebase", level: 70 },
-  { name: "GraphQL", level: 65 },
+  { name: "Javascript", level: 95 },
+  { name: "React", level: 95 },
+  { name: "Tailwind", level: 92 },
+  { name: "Typescript", level: 80 },
+  { name: "Express", level: 80 },
+  { name: "Node", level: 80 },
+  //   { name: "Firebase", level: 70 },
+  //   { name: "GraphQL", level: 65 },
 ];
 
 // ===================== //
@@ -103,18 +106,22 @@ const TechStack = () => {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section className="py-12 section-padding" ref={ref}>
+    <section className="py-12 section-padding font-hero" ref={ref}>
       <div className="container mx-auto text-center">
-        <motion.h2
-          className="text-3xl md:text-4xl font-bold mb-10"
+        <motion.div
+          className="text-center mx-auto mb-10"
           initial={{ opacity: 0, y: -20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          Tech Stack
-        </motion.h2>
+          <h3 className="text-lg font-semibold mb-2">Tech Stack</h3>
+          <p className="text-base text-center gap-1 mb-4 ">
+            Skills, tools, and technologies that I handle better than <br />a
+            game controller.
+          </p>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 text-left">
+        <div className="grid md:grid-cols-2 gap-12 text-left items-center">
           {/* Frontend Tech Grid */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -131,7 +138,7 @@ const TechStack = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             // whileInView={{ opacity: 1, x: 0 }}
           >
-            <h3 className="text-2xl font-semibold mb-6">Backend Skills</h3>
+            {/* <h3 className="text-2xl font-semibold mb-6">Backend Skills</h3> */}
             {backendSkills.map((skill, i) => (
               <SkillBar key={i} name={skill.name} level={skill.level} />
             ))}

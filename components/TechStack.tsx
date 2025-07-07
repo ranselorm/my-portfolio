@@ -55,9 +55,9 @@ const SkillBar = ({ name, level }: { name: string; level: number }) => {
         <span className="text-sm font-medium">{name}</span>
         <span className="text-sm">{level}%</span>
       </div>
-      <div className="w-full h-2 bg-gray-200 rounded-full">
+      <div className="w-full h-2 bg-gray-200 rounded">
         <motion.div
-          className="h-full bg-primary rounded-full"
+          className="h-full bg-primary rounded"
           initial={{ width: 0 }}
           whileInView={{ width: `${level}%` }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -76,6 +76,10 @@ const frontendTech = [
   { title: "Typescript", icon: "devicon:typescript" },
   { title: "React", icon: "skill-icons:react-dark" },
   { title: "Next", icon: "skill-icons:nextjs-light" },
+  { title: "Tailwind", icon: "skill-icons:tailwindcss-dark" },
+  { title: "HTML5", icon: "skill-icons:html" },
+  { title: "CSS3", icon: "skill-icons:css" },
+  { title: "Python", icon: "skill-icons:python-dark" },
   { title: "Tailwind", icon: "skill-icons:tailwindcss-dark" },
   { title: "HTML5", icon: "skill-icons:html" },
   { title: "CSS3", icon: "skill-icons:css" },
@@ -99,7 +103,7 @@ const TechStack = () => {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section className="py-16 section-padding" ref={ref}>
+    <section className="py-12 section-padding" ref={ref}>
       <div className="container mx-auto text-center">
         <motion.h2
           className="text-3xl md:text-4xl font-bold mb-10"
@@ -110,7 +114,7 @@ const TechStack = () => {
           Tech Stack
         </motion.h2>
 
-        <div className="grid md:grid-cols-2 gap-32 text-left">
+        <div className="grid md:grid-cols-2 gap-12 text-left">
           {/* Frontend Tech Grid */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}

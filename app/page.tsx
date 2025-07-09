@@ -12,6 +12,7 @@ import MainHero from "../components/MainHero";
 import AboutMe from "@/components/AboutMe";
 import TechStack from "@/components/TechStack";
 import Projects from "@/components/Projects";
+import SkillsTree from "@/components/SkillsTree";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <About />
       <TechStack />
       <Projects />
+      {/* <SkillsTree /> */}
       {/* <AboutMe /> */}
       {/* <MainHero /> */}
       {/* <HeroSection /> */}

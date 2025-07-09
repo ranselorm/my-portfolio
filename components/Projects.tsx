@@ -62,7 +62,7 @@ const Projects = () => {
   };
 
   return (
-    <section className="py-12 section-padding font-hero">
+    <section className="py-12 section-padding font-hero bg-grey">
       <div className="container mx-auto text-center">
         <div>
           <h3 className="text-lg font-semibold mb-2">Portfolio</h3>

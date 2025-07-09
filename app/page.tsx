@@ -13,6 +13,7 @@ import AboutMe from "@/components/AboutMe";
 import TechStack from "@/components/TechStack";
 import Projects from "@/components/Projects";
 import SkillsTree from "@/components/SkillsTree";
+import FeaturedTestimonial from "@/components/FeaturedTestimonial";
 
 export default function Home() {
   return (
@@ -22,7 +23,8 @@ export default function Home() {
       <About />
       <TechStack />
       <Projects />
-      {/* <SkillsTree /> */}
+      <FeaturedTestimonial />
+      <SkillsTree />
       {/* <AboutMe /> */}
       {/* <MainHero /> */}
       {/* <HeroSection /> */}

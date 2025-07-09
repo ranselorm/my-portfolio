@@ -2,24 +2,37 @@
 
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Testimonial = () => {
   return (
-    <section className="relative bg-[#0F172A] py-12 font-primary section-padding overflow-visible h-[70vh] flex items-center">
+    <section className="relative bg-[#0F172A] py-12 font-primary section-padding overflow-visible h-[70vh] flex items-center my-20">
       <div className="container mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
-        {/* Image — overlapping top and bottom */}
-        <div className="relative z-20">
-          <div className="relative -mt-44 mb-[-172px] rounded-md overflow-hidden shadow-2xl w-[360px] h-[520px]">
+        {/* Image with animation */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: false }}
+          className="relative z-20"
+        >
+          <div className="relative my-[172px] rounded-md overflow-hidden shadow-2xl w-[380px] h-[520px]">
             <img
               src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Testimonial"
               className="object-cover w-full h-full"
             />
           </div>
-        </div>
+        </motion.div>
 
-        {/* Text */}
-        <div className="max-w-3xl text-white relative">
+        {/* Text with animation */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+          viewport={{ once: true }}
+          className="max-w-3xl text-white relative"
+        >
           <Icon
             icon="hugeicons:quote-up"
             className="absolute top-0 left-0 w-16 h-16 text-white opacity-10 -translate-x-4 -translate-y-3"
@@ -36,7 +49,7 @@ const Testimonial = () => {
             <p className="font-bold text-lg">Judith Black</p>
             <p className="text-gray-400 text-base">CEO of Workcation</p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

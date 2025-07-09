@@ -12,6 +12,7 @@ type Project = {
   title: string;
   category: "Landing" | "Website" | "WebApp" | "Mobile";
   image: string;
+  images: string[]; // <-- array of images
 };
 
 const allProjects: Project[] = [
@@ -19,27 +20,41 @@ const allProjects: Project[] = [
     title: "Portfolio Website",
     category: "Website",
     image: "/images/project1.jpeg",
+    images: [
+      "/images/project1.jpeg",
+      "/images/project2.jpg",
+      "/images/project3.jpg",
+    ],
   },
   {
     title: "Ecommerce Web App",
     category: "WebApp",
     image: "/images/project2.jpg",
+    images: ["/images/project1.jpeg", "/images/project1b.jpeg"],
   },
   {
     title: "Landing Page - Product",
     category: "Landing",
     image: "/images/project3.jpg",
+    images: ["/images/project1.jpeg", "/images/project1b.jpeg"],
   },
   {
     title: "Mobile Banking App",
     category: "Mobile",
     image: "/images/project4.jpg",
+    images: ["/images/project1.jpeg", "/images/project1b.jpeg"],
   },
-  { title: "Agency Site", category: "Website", image: "/images/project5.jpg" },
+  {
+    title: "Agency Site",
+    category: "Website",
+    image: "/images/project5.jpg",
+    images: ["/images/project1.jpeg", "/images/project1b.jpeg"],
+  },
   {
     title: "Food Delivery Web App",
     category: "WebApp",
     image: "/images/project6.jpg",
+    images: ["/images/project1.jpeg", "/images/project1b.jpeg"],
   },
 ];
 
@@ -49,6 +64,8 @@ type Category = (typeof categories)[number];
 const Projects = () => {
   const [active, setActive] = useState<Category>("All");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
   const [modalOpen, setModalOpen] = useState(false);
 
   const filtered =
@@ -58,6 +75,7 @@ const Projects = () => {
 
   const openModal = (project: Project) => {
     setSelectedProject(project);
+    setActiveImageIndex(0); // reset to first image
     setModalOpen(true);
   };
 
@@ -127,28 +145,62 @@ const Projects = () => {
         </AnimatePresence>
 
         {/* AntD Modal */}
+        {/* AntD Modal */}
         <Modal
           open={modalOpen}
           footer={null}
           onCancel={() => setModalOpen(false)}
           centered
-          width={600}
+          width={800}
           title={selectedProject?.title}
         >
           {selectedProject && (
-            <div className="flex flex-col items-center gap-4">
-              <div className="relative w-full h-64 rounded-md overflow-hidden">
-                <Image
-                  src={selectedProject.image}
-                  alt={selectedProject.title}
-                  fill
-                  className="object-cover"
-                />
+            <div className="flex flex-col gap-4">
+              {/* Main/Banner Image */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={selectedProject.images[activeImageIndex]}
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.2 }}
+                  className="relative w-full h-64 rounded-md overflow-hidden"
+                >
+                  <Image
+                    src={selectedProject.images[activeImageIndex]}
+                    alt={selectedProject.title}
+                    fill
+                    className="object-cover"
+                  />
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Thumbnails */}
+              <div className="flex flex-wrap justify-center gap-3 mt-2">
+                {selectedProject.images.map((img, idx) => (
+                  <div
+                    key={idx}
+                    className={`relative w-20 h-14 rounded-md overflow-hidden cursor-pointer border ${
+                      idx === activeImageIndex
+                        ? "border-primary"
+                        : "border-gray-300"
+                    }`}
+                    onClick={() => setActiveImageIndex(idx)}
+                  >
+                    <Image
+                      src={img}
+                      alt={`Thumb ${idx}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
               </div>
-              <p className="text-sm text-gray-600">
+
+              {/* Category */}
+              <p className="text-sm text-center text-gray-600">
                 Category: {selectedProject.category}
               </p>
-              {/* Add more detail here if needed */}
             </div>
           )}
         </Modal>

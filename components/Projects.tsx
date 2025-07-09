@@ -115,17 +115,17 @@ const Projects = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
-            className="flex flex-wrap justify-center gap-8"
+            className="flex flex-wrap justify-center gap-3"
           >
             {filtered.map((project, i) => (
               <motion.div
                 key={i}
-                className="bg-white w-[300px] h-[300px] shadow-lg rounded-lg overflow-hidden border flex flex-col cursor-pointer"
+                className="bg-white w-[280px] h-[280px] shadow-lg rounded-lg overflow-hidden border flex flex-col cursor-pointer"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
                 onClick={() => openModal(project)}
               >
-                <div className="relative w-full h-48 bg-gray-100">
+                <div className="relative w-full h-full bg-gray-100">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -133,12 +133,12 @@ const Projects = () => {
                     className="object-cover"
                   />
                 </div>
-                <div className="p-4 text-center mt-auto">
+                {/* <div className="p-4 text-center mt-auto">
                   <h4 className="text-lg font-semibold">{project.title}</h4>
                   <p className="text-xs mt-1 text-gray-500">
                     {project.category}
                   </p>
-                </div>
+                </div> */}
               </motion.div>
             ))}
           </motion.div>

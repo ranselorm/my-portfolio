@@ -3,7 +3,32 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Modal } from "antd";
-import "antd/dist/reset.css"; // Reset default Ant Design styles (optional if already set)
+import "antd/dist/reset.css";
+
+// ===================== //
+// ANIMATION VARIANTS    //
+// ===================== //
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
 
 // ===================== //
 // TYPES & DATA          //
@@ -12,7 +37,7 @@ type Project = {
   title: string;
   category: "Landing" | "Website" | "WebApp" | "Mobile";
   image: string;
-  images: string[]; // <-- array of images
+  images: string[];
 };
 
 const allProjects: Project[] = [
@@ -30,31 +55,31 @@ const allProjects: Project[] = [
     title: "Ecommerce Web App",
     category: "WebApp",
     image: "/images/project2.jpg",
-    images: ["/images/project1.jpeg", "/images/project1b.jpeg"],
+    images: ["/images/project2.jpg", "/images/project1b.jpeg"],
   },
   {
     title: "Landing Page - Product",
     category: "Landing",
     image: "/images/project3.jpg",
-    images: ["/images/project1.jpeg", "/images/project1b.jpeg"],
+    images: ["/images/project3.jpg", "/images/project1b.jpeg"],
   },
   {
     title: "Mobile Banking App",
     category: "Mobile",
     image: "/images/project4.jpg",
-    images: ["/images/project1.jpeg", "/images/project1b.jpeg"],
+    images: ["/images/project4.jpg", "/images/project1b.jpeg"],
   },
   {
     title: "Agency Site",
     category: "Website",
     image: "/images/project5.jpg",
-    images: ["/images/project1.jpeg", "/images/project1b.jpeg"],
+    images: ["/images/project5.jpg", "/images/project1b.jpeg"],
   },
   {
     title: "Food Delivery Web App",
     category: "WebApp",
     image: "/images/project6.jpg",
-    images: ["/images/project1.jpeg", "/images/project1b.jpeg"],
+    images: ["/images/project6.jpg", "/images/project1b.jpeg"],
   },
 ];
 
@@ -65,7 +90,6 @@ const Projects = () => {
   const [active, setActive] = useState<Category>("All");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
-
   const [modalOpen, setModalOpen] = useState(false);
 
   const filtered =
@@ -75,23 +99,35 @@ const Projects = () => {
 
   const openModal = (project: Project) => {
     setSelectedProject(project);
-    setActiveImageIndex(0); // reset to first image
+    setActiveImageIndex(0);
     setModalOpen(true);
   };
 
   return (
     <section className="py-12 section-padding font-hero bg-grey">
       <div className="container mx-auto text-center">
-        <div>
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <h3 className="text-lg font-semibold mb-2">Portfolio</h3>
           <p className="text-base text-center gap-1 mb-7">
             Take a peek at my portfolio. It's where pixels and functionality
             have <br /> a party on the web!
           </p>
-        </div>
+        </motion.div>
 
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-8">
+        <motion.div
+          className="flex flex-wrap justify-center gap-3 mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           {categories.map((cat) => (
             <button
               key={cat}
@@ -105,22 +141,23 @@ const Projects = () => {
               {cat}
             </button>
           ))}
-        </div>
+        </motion.div>
 
         {/* Projects Grid */}
         <AnimatePresence mode="wait">
           <motion.div
             key={active}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.4 }}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
             className="flex flex-wrap justify-center gap-3"
           >
             {filtered.map((project, i) => (
               <motion.div
                 key={i}
-                className="bg-white w-[280px] h-[280px] shadow-lg rounded-lg overflow-hidden border flex flex-col cursor-pointer"
+                variants={cardVariants}
+                className="bg-white w-[320px] h-[280px] shadow-lg rounded-md overflow-hidden border flex flex-col cursor-pointer"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
                 onClick={() => openModal(project)}
@@ -133,19 +170,12 @@ const Projects = () => {
                     className="object-cover"
                   />
                 </div>
-                {/* <div className="p-4 text-center mt-auto">
-                  <h4 className="text-lg font-semibold">{project.title}</h4>
-                  <p className="text-xs mt-1 text-gray-500">
-                    {project.category}
-                  </p>
-                </div> */}
               </motion.div>
             ))}
           </motion.div>
         </AnimatePresence>
 
-        {/* AntD Modal */}
-        {/* AntD Modal */}
+        {/* Modal */}
         <Modal
           open={modalOpen}
           footer={null}
@@ -156,14 +186,14 @@ const Projects = () => {
         >
           {selectedProject && (
             <div className="flex flex-col gap-4">
-              {/* Main/Banner Image */}
+              {/* Animated Banner Image */}
               <AnimatePresence mode="wait">
                 <motion.div
                   key={selectedProject.images[activeImageIndex]}
                   initial={{ opacity: 0, scale: 0.98 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.2 }}
+                  transition={{ duration: 0.3 }}
                   className="relative w-full h-64 rounded-md overflow-hidden"
                 >
                   <Image
@@ -197,7 +227,6 @@ const Projects = () => {
                 ))}
               </div>
 
-              {/* Category */}
               <p className="text-sm text-center text-gray-600">
                 Category: {selectedProject.category}
               </p>

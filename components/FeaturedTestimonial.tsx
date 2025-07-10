@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const Testimonial = () => {
   return (
-    <section className="relative bg-[#0F172A] py-12 font-primary section-padding overflow-visible h-[70vh] flex items-center my-20">
+    <section className="relative bg-[#0F172A] py-12 font-primary section-padding overflow-visible h-[50vh] flex items-center my-20 justify-center">
       <div className="container mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
         {/* Image with animation */}
         <motion.div
@@ -16,9 +16,9 @@ const Testimonial = () => {
           viewport={{ once: false }}
           className="relative z-20"
         >
-          <div className="relative my-[172px] rounded-md overflow-hidden shadow-2xl w-[380px] h-[520px]">
+          <div className="relative my-[172px] rounded-md overflow-hidden shadow-2xl w-[300px] h-[400px]">
             <img
-              src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJvc3N8ZW58MHx8MHx8fDA%3D"
               alt="Testimonial"
               className="object-cover w-full h-full"
             />
@@ -33,10 +33,10 @@ const Testimonial = () => {
           viewport={{ once: true }}
           className="max-w-3xl text-white relative"
         >
-          <Icon
+          {/* <Icon
             icon="hugeicons:quote-up"
             className="absolute top-0 left-0 w-16 h-16 text-white opacity-10 -translate-x-4 -translate-y-3"
-          />
+          /> */}
 
           <p className="text-lg md:text-2xl font-medium leading-relaxed z-10 relative">
             Gravida quam mi erat tortor neque molestie. Auctor aliquet at

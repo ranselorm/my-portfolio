@@ -166,9 +166,9 @@ const Projects: React.FC = () => {
                   <div
                     className="
                       absolute inset-0
-                      bg-black bg-opacity-60
-                      transform translate-y-full group-hover:translate-y-0
-                      transition-transform duration-300 ease-out
+                      bg-black bg-opacity-90
+                      transform translate-y-full duration-700 group-hover:translate-y-0
+                      transition-transform ease-out
                       flex flex-col items-center justify-center p-4
                     "
                   >

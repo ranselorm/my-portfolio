@@ -13,10 +13,10 @@ const leftNavLinks = [
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(
-    null
-  );
+  // const [lastScrollY, setLastScrollY] = useState(0);
+  // const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(
+  //   null
+  // );
 
   // useEffect(() => {
   //   const handleScroll = () => {

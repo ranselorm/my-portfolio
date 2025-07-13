@@ -12,9 +12,7 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
@@ -23,10 +21,7 @@ const cardVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
+    transition: { duration: 0.5, ease: "easeOut" },
   },
 };
 
@@ -41,46 +36,7 @@ type Project = {
 };
 
 const allProjects: Project[] = [
-  {
-    title: "Portfolio Website",
-    category: "Website",
-    image: "/images/project1.jpeg",
-    images: [
-      "/images/project1.jpeg",
-      "/images/project2.jpg",
-      "/images/project3.jpg",
-    ],
-  },
-  {
-    title: "Ecommerce Web App",
-    category: "WebApp",
-    image: "/images/project2.jpg",
-    images: ["/images/project2.jpg", "/images/project1b.jpeg"],
-  },
-  {
-    title: "Landing Page - Product",
-    category: "Landing",
-    image: "/images/project3.jpg",
-    images: ["/images/project3.jpg", "/images/project1b.jpeg"],
-  },
-  {
-    title: "Mobile Banking App",
-    category: "Mobile",
-    image: "/images/project4.jpg",
-    images: ["/images/project4.jpg", "/images/project1b.jpeg"],
-  },
-  {
-    title: "Agency Site",
-    category: "Website",
-    image: "/images/project5.jpg",
-    images: ["/images/project5.jpg", "/images/project1b.jpeg"],
-  },
-  {
-    title: "Food Delivery Web App",
-    category: "WebApp",
-    image: "/images/project6.jpg",
-    images: ["/images/project6.jpg", "/images/project1b.jpeg"],
-  },
+  /* …your projects… */
 ];
 
 const categories = ["All", "Landing", "Website", "WebApp", "Mobile"] as const;
@@ -157,11 +113,12 @@ const Projects = () => {
               <motion.div
                 key={i}
                 variants={cardVariants}
-                className="bg-white w-[320px] h-[280px] shadow-lg rounded-md overflow-hidden border flex flex-col cursor-pointer"
+                className="w-[320px] h-[280px] shadow-lg rounded-md overflow-hidden cursor-pointer relative group"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
                 onClick={() => openModal(project)}
               >
+                {/* Image & Overlay */}
                 <div className="relative w-full h-full bg-gray-100">
                   <Image
                     src={project.image}
@@ -169,6 +126,30 @@ const Projects = () => {
                     fill
                     className="object-cover"
                   />
+
+                  {/* Overlay */}
+                  <div
+                    className="
+                      absolute inset-0
+                      bg-black bg-opacity-60
+                      transform translate-y-full group-hover:translate-y-0
+                      transition-transform duration-300 ease-out
+                      flex flex-col items-center justify-center p-4
+                    "
+                  >
+                    <h3 className="text-white text-lg font-semibold mb-2">
+                      {project.title}
+                    </h3>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        openModal(project);
+                      }}
+                      className="px-4 py-2 bg-white text-black rounded"
+                    >
+                      View Project
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             ))}

@@ -18,35 +18,35 @@ const Navbar: React.FC = () => {
     null
   );
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const currentScrollY = window.scrollY;
 
-      // Only trigger if scroll exceeds threshold (e.g., 10px)
-      if (Math.abs(currentScrollY - lastScrollY) < 10) return;
+  //     // Only trigger if scroll exceeds threshold (e.g., 10px)
+  //     if (Math.abs(currentScrollY - lastScrollY) < 10) return;
 
-      // Clear previous timeout
-      if (scrollTimeout) clearTimeout(scrollTimeout);
+  //     // Clear previous timeout
+  //     if (scrollTimeout) clearTimeout(scrollTimeout);
 
-      // Delay before reacting
-      const timeout = setTimeout(() => {
-        if (currentScrollY > lastScrollY && currentScrollY > 60) {
-          setShowNavbar(false); // scroll down
-        } else {
-          setShowNavbar(true); // scroll up
-        }
-        setLastScrollY(currentScrollY);
-      }, 150); // 100ms debounce
+  //     // Delay before reacting
+  //     const timeout = setTimeout(() => {
+  //       if (currentScrollY > lastScrollY && currentScrollY > 60) {
+  //         setShowNavbar(false); // scroll down
+  //       } else {
+  //         setShowNavbar(true); // scroll up
+  //       }
+  //       setLastScrollY(currentScrollY);
+  //     }, 150); // 100ms debounce
 
-      setScrollTimeout(timeout);
-    };
+  //     setScrollTimeout(timeout);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      if (scrollTimeout) clearTimeout(scrollTimeout);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollY, scrollTimeout]);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     if (scrollTimeout) clearTimeout(scrollTimeout);
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [lastScrollY, scrollTimeout]);
 
   return (
     <AnimatePresence>

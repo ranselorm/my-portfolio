@@ -36,13 +36,52 @@ type Project = {
 };
 
 const allProjects: Project[] = [
-  /* …your projects… */
+  {
+    title: "Portfolio Website",
+    category: "Website",
+    image: "/images/project1.jpeg",
+    images: [
+      "/images/project1.jpeg",
+      "/images/project2.jpg",
+      "/images/project3.jpg",
+    ],
+  },
+  {
+    title: "Ecommerce Web App",
+    category: "WebApp",
+    image: "/images/project2.jpg",
+    images: ["/images/project2.jpg", "/images/project1b.jpeg"],
+  },
+  {
+    title: "Landing Page - Product",
+    category: "Landing",
+    image: "/images/project3.jpg",
+    images: ["/images/project3.jpg", "/images/project1b.jpeg"],
+  },
+  {
+    title: "Mobile Banking App",
+    category: "Mobile",
+    image: "/images/project4.jpg",
+    images: ["/images/project4.jpg", "/images/project1b.jpeg"],
+  },
+  {
+    title: "Agency Site",
+    category: "Website",
+    image: "/images/project5.jpg",
+    images: ["/images/project5.jpg", "/images/project1b.jpeg"],
+  },
+  {
+    title: "Food Delivery Web App",
+    category: "WebApp",
+    image: "/images/project6.jpg",
+    images: ["/images/project6.jpg", "/images/project1b.jpeg"],
+  },
 ];
 
 const categories = ["All", "Landing", "Website", "WebApp", "Mobile"] as const;
 type Category = (typeof categories)[number];
 
-const Projects = () => {
+const Projects: React.FC = () => {
   const [active, setActive] = useState<Category>("All");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -65,9 +104,8 @@ const Projects = () => {
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
         >
           <h3 className="text-lg font-semibold mb-2">Portfolio</h3>
           <p className="text-base text-center gap-1 mb-7">
@@ -80,9 +118,8 @@ const Projects = () => {
         <motion.div
           className="flex flex-wrap justify-center gap-3 mb-8"
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
         >
           {categories.map((cat) => (
             <button
@@ -105,8 +142,7 @@ const Projects = () => {
             key={active}
             variants={containerVariants}
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            animate="visible"
             className="flex flex-wrap justify-center gap-3"
           >
             {filtered.map((project, i) => (
@@ -126,7 +162,6 @@ const Projects = () => {
                     fill
                     className="object-cover"
                   />
-
                   {/* Overlay */}
                   <div
                     className="

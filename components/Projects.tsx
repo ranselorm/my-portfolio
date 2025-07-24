@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Icon } from "@iconify/react/dist/iconify.js";
 import Image from "next/image";
 import { Modal } from "antd";
 import "antd/dist/reset.css";
@@ -33,6 +34,7 @@ type Project = {
   category: "Landing" | "Website" | "WebApp" | "Mobile";
   image: string;
   images: string[];
+  url: string;
 };
 
 const allProjects: Project[] = [
@@ -45,36 +47,42 @@ const allProjects: Project[] = [
       "/images/project2.jpg",
       "/images/project3.jpg",
     ],
+    url: "#",
   },
   {
     title: "Ecommerce Web App",
     category: "WebApp",
     image: "/images/project2.jpg",
     images: ["/images/project2.jpg", "/images/project1b.jpeg"],
+    url: "#",
   },
   {
     title: "Landing Page - Product",
     category: "Landing",
-    image: "/images/project3.jpg",
-    images: ["/images/project3.jpg", "/images/project1b.jpeg"],
+    image: "/images/landing1.png",
+    images: ["/images/landing1.png", "/images/landing1b.png"],
+    url: "#",
   },
   {
     title: "Mobile Banking App",
     category: "Mobile",
     image: "/images/project4.jpg",
     images: ["/images/project4.jpg", "/images/project1b.jpeg"],
+    url: "#",
   },
   {
     title: "Agency Site",
     category: "Website",
     image: "/images/project5.jpg",
     images: ["/images/project5.jpg", "/images/project1b.jpeg"],
+    url: "#",
   },
   {
     title: "Food Delivery Web App",
     category: "WebApp",
     image: "/images/project6.jpg",
     images: ["/images/project6.jpg", "/images/project1b.jpeg"],
+    url: "#",
   },
 ];
 
@@ -149,12 +157,11 @@ const Projects: React.FC = () => {
               <motion.div
                 key={i}
                 variants={cardVariants}
-                className="w-[320px] h-[280px] shadow-lg rounded-md overflow-hidden cursor-pointer relative group"
+                className="w-[320px] h-[280px] shadow-lg rounded-md overflow-hidden cursor-pointer relative"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
                 onClick={() => openModal(project)}
               >
-                {/* Image & Overlay */}
                 <div className="relative w-full h-full bg-gray-100">
                   <Image
                     src={project.image}
@@ -162,27 +169,24 @@ const Projects: React.FC = () => {
                     fill
                     className="object-cover"
                   />
-                  {/* Overlay */}
-                  <div
-                    className="
-                      absolute inset-0
-                      bg-black bg-opacity-90
-                      transform translate-y-full duration-700 group-hover:translate-y-0
-                      transition-transform ease-out
-                      flex flex-col items-center justify-center p-4
-                    "
-                  >
-                    <h3 className="text-white text-lg font-semibold mb-2">
-                      {project.title}
-                    </h3>
+                  {/* Info Bar */}
+                  <div className="absolute bottom-0 left-0 w-full bg-white bg-opacity-80 px-4 py-2 flex justify-between items-center">
+                    <div className="flex flex-col text-left">
+                      <span className="text-xs text-gray-500">
+                        {project.category}
+                      </span>
+                      <h4 className="text-sm font-semibold text-gray-800">
+                        {project.title}
+                      </h4>
+                    </div>
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
                         openModal(project);
                       }}
-                      className="px-4 py-2 bg-white text-black rounded"
+                      className="hover:text-primary"
                     >
-                      View Project
+                      <Icon icon="mdi:open-in-new" className="w-5 h-5" />
                     </button>
                   </div>
                 </div>
@@ -210,7 +214,7 @@ const Projects: React.FC = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.98 }}
                   transition={{ duration: 0.3 }}
-                  className="relative w-full h-64 rounded-md overflow-hidden"
+                  className="relative w-full h-[300px] rounded-md overflow-hidden"
                 >
                   <Image
                     src={selectedProject.images[activeImageIndex]}

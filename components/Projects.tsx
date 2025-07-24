@@ -66,11 +66,11 @@ const allProjects: Project[] = [
     url: "https://play.google.com/store/apps/details?id=com.berthengineering.yahweeitaapp&hl=en",
   },
   {
-    title: "Agency Site",
+    title: "Gericht",
     category: "Website",
     image: "/images/project5.jpg",
     images: ["/images/project5.jpg", "/images/project1b.jpeg"],
-    url: "#",
+    url: "https://restaurant-jade-chi.vercel.app/",
   },
   {
     title: "Food Delivery Web App",

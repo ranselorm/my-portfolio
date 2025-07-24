@@ -3,12 +3,9 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Image from "next/image";
-import { Modal, Drawer } from "antd";
+import { Drawer } from "antd";
 import "antd/dist/reset.css";
 
-// ===================== //
-// ANIMATION VARIANTS    //
-// ===================== //
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -26,12 +23,9 @@ const cardVariants = {
   },
 };
 
-// ===================== //
-// TYPES & DATA          //
-// ===================== //
 type Project = {
   title: string;
-  category: "Landing" | "Website" | "WebApp" | "Mobile";
+  category: "Website" | "Web Application" | "Mobile Application";
   image: string;
   images: string[];
   url: string;
@@ -39,33 +33,34 @@ type Project = {
 
 const allProjects: Project[] = [
   {
-    title: "Portfolio Website",
+    title: "Minsol Ltd",
     category: "Website",
-    image: "/images/project1.jpeg",
+    image: "/images/minsol.png",
+    images: ["/images/minsol.png"],
+    url: "https://www.minsolltd.com/",
+  },
+  {
+    title: "Ecommerce Web App",
+    category: "Web Application",
+    image: "/images/ananse1.png",
     images: [
-      "/images/project1.jpeg",
-      "/images/project2.jpg",
-      "/images/project3.jpg",
+      "/images/ananse1.png",
+      "/images/ananse2.png",
+      "/images/ananse3.png",
+      "/images/ananse4.png",
     ],
     url: "#",
   },
   {
-    title: "Ecommerce Web App",
-    category: "WebApp",
-    image: "/images/project2.jpg",
-    images: ["/images/project2.jpg", "/images/project1b.jpeg"],
-    url: "#",
-  },
-  {
-    title: "Landing Page - Product",
-    category: "Landing",
+    title: "Cyrus Consumer Finance",
+    category: "Website",
     image: "/images/landing1.png",
     images: ["/images/landing1.png", "/images/landing1b.png"],
-    url: "#",
+    url: "https://ccf-lime.vercel.app/",
   },
   {
     title: "Mobile Banking App",
-    category: "Mobile",
+    category: "Mobile Application",
     image: "/images/project4.jpg",
     images: ["/images/project4.jpg", "/images/project1b.jpeg"],
     url: "#",
@@ -79,14 +74,19 @@ const allProjects: Project[] = [
   },
   {
     title: "Food Delivery Web App",
-    category: "WebApp",
+    category: "Web Application",
     image: "/images/project6.jpg",
     images: ["/images/project6.jpg", "/images/project1b.jpeg"],
     url: "#",
   },
 ];
 
-const categories = ["All", "Landing", "Website", "WebApp", "Mobile"] as const;
+const categories = [
+  "All",
+  "Website",
+  "Web Application",
+  "Mobile Application",
+] as const;
 type Category = (typeof categories)[number];
 
 const Projects: React.FC = () => {
@@ -151,13 +151,13 @@ const Projects: React.FC = () => {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="flex flex-wrap justify-center gap-3"
+            className="flex flex-wrap justify-center gap-6"
           >
             {filtered.map((project, i) => (
               <motion.div
                 key={i}
                 variants={cardVariants}
-                className="w-[320px] h-[280px] shadow-lg rounded-md overflow-hidden cursor-pointer relative"
+                className="w-[320px] h-[280px] rounded-md overflow-hidden cursor-pointer relative border"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
                 onClick={() => openModal(project)}
@@ -199,13 +199,22 @@ const Projects: React.FC = () => {
         <Drawer
           open={modalOpen}
           onClose={() => setModalOpen(false)}
-          width={800}
-          title={selectedProject?.title}
+          width={500}
+          // title={selectedProject?.title}
           placement="right"
         >
           {selectedProject && (
             <div className="flex flex-col gap-4">
               {/* Animated Banner Image */}
+              <div>
+                <h3 className="font-semibold text-xl">
+                  {selectedProject?.title}
+                </h3>
+                <span className="text-sm text-gray-600 -mt-20">
+                  {selectedProject?.category}
+                </span>
+              </div>
+
               <AnimatePresence mode="wait">
                 <motion.div
                   key={selectedProject.images[activeImageIndex]}
@@ -213,7 +222,7 @@ const Projects: React.FC = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.98 }}
                   transition={{ duration: 0.3 }}
-                  className="relative w-full h-[300px] rounded-md overflow-hidden"
+                  className="relative w-full h-[250px] rounded-md overflow-hidden flex items-end justify-center gap-y-4 border"
                 >
                   <Image
                     src={selectedProject.images[activeImageIndex]}
@@ -221,34 +230,43 @@ const Projects: React.FC = () => {
                     fill
                     className="object-cover"
                   />
+                  {/* thumbnails */}
+                  <div className="flex flex-wrap justify-center gap-3 mb-1">
+                    {selectedProject.images.map((img, idx) => (
+                      <div
+                        key={idx}
+                        className={`relative w-20 h-14 rounded-md overflow-hidden cursor-pointer border ${
+                          idx === activeImageIndex
+                            ? "border-primary"
+                            : "border-gray-300"
+                        }`}
+                        onClick={() => setActiveImageIndex(idx)}
+                      >
+                        <Image
+                          src={img}
+                          alt={`Thumb ${idx}`}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </motion.div>
               </AnimatePresence>
-
-              {/* Thumbnails */}
-              <div className="flex flex-wrap justify-center gap-3 mt-2">
-                {selectedProject.images.map((img, idx) => (
-                  <div
-                    key={idx}
-                    className={`relative w-20 h-14 rounded-md overflow-hidden cursor-pointer border ${
-                      idx === activeImageIndex
-                        ? "border-primary"
-                        : "border-gray-300"
-                    }`}
-                    onClick={() => setActiveImageIndex(idx)}
-                  >
-                    <Image
-                      src={img}
-                      alt={`Thumb ${idx}`}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                ))}
+              <div className="font-hero">
+                <p className="leading-relaxed text-gray-600">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam
+                  eveniet, dolorem voluptates excepturi, officiis accusantium
+                  corporis doloribus eum ullam recusandae cupiditate qui
+                  voluptate distinctio velit perspiciatis ad laborum. Numquam,
+                  accusantium?
+                </p>
+                <button className="bg-primary mt-16 text-white py-3 rounded w-full flex items-center justify-center">
+                  <a href={selectedProject?.url} target="_blank">
+                    Launch {selectedProject?.title}
+                  </a>
+                </button>
               </div>
-
-              <p className="text-sm text-center text-gray-600">
-                Category: {selectedProject.category}
-              </p>
             </div>
           )}
         </Drawer>

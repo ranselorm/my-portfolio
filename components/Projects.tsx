@@ -68,8 +68,8 @@ const allProjects: Project[] = [
   {
     title: "Gericht",
     category: "Website",
-    image: "/images/project5.jpg",
-    images: ["/images/project5.jpg", "/images/project1b.jpeg"],
+    image: "/images/res.png",
+    images: ["/images/res.png"],
     url: "https://restaurant-jade-chi.vercel.app/",
   },
   {

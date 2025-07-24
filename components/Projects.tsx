@@ -73,11 +73,11 @@ const allProjects: Project[] = [
     url: "https://restaurant-jade-chi.vercel.app/",
   },
   {
-    title: "Food Delivery Web App",
+    title: "Ecommerce",
     category: "Web Application",
-    image: "/images/project6.jpg",
-    images: ["/images/project6.jpg", "/images/project1b.jpeg"],
-    url: "#",
+    image: "/images/commerce.png",
+    images: ["/images/commerce.png"],
+    url: "https://ecommerce-tan-zeta-52.vercel.app/",
   },
 ];
 

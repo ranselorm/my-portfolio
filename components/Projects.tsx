@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Image from "next/image";
-import { Modal } from "antd";
+import { Modal, Drawer } from "antd";
 import "antd/dist/reset.css";
 
 // ===================== //
@@ -195,14 +195,13 @@ const Projects: React.FC = () => {
           </motion.div>
         </AnimatePresence>
 
-        {/* Modal */}
-        <Modal
+        {/* Drawer */}
+        <Drawer
           open={modalOpen}
-          footer={null}
-          onCancel={() => setModalOpen(false)}
-          centered
+          onClose={() => setModalOpen(false)}
           width={800}
           title={selectedProject?.title}
+          placement="right"
         >
           {selectedProject && (
             <div className="flex flex-col gap-4">
@@ -252,7 +251,7 @@ const Projects: React.FC = () => {
               </p>
             </div>
           )}
-        </Modal>
+        </Drawer>
       </div>
     </section>
   );

@@ -40,7 +40,7 @@ const allProjects: Project[] = [
     url: "https://www.minsolltd.com/",
   },
   {
-    title: "Ecommerce Web App",
+    title: "Anansesem Admin",
     category: "Web Application",
     image: "/images/ananse1.png",
     images: [
@@ -59,11 +59,11 @@ const allProjects: Project[] = [
     url: "https://ccf-lime.vercel.app/",
   },
   {
-    title: "Mobile Banking App",
+    title: "Yahwe-eita App",
     category: "Mobile Application",
-    image: "/images/project4.jpg",
-    images: ["/images/project4.jpg", "/images/project1b.jpeg"],
-    url: "#",
+    image: "/images/phones.svg",
+    images: ["/images/phones.svg"],
+    url: "https://play.google.com/store/apps/details?id=com.berthengineering.yahweeitaapp&hl=en",
   },
   {
     title: "Agency Site",
@@ -261,11 +261,11 @@ const Projects: React.FC = () => {
                   voluptate distinctio velit perspiciatis ad laborum. Numquam,
                   accusantium?
                 </p>
-                <button className="bg-primary mt-16 text-white py-3 rounded w-full flex items-center justify-center">
-                  <a href={selectedProject?.url} target="_blank">
+                <a href={selectedProject?.url} target="_blank">
+                  <button className="bg-primary mt-16 text-white py-3 rounded w-full flex items-center justify-center">
                     Launch {selectedProject?.title}
-                  </a>
-                </button>
+                  </button>
+                </a>
               </div>
             </div>
           )}

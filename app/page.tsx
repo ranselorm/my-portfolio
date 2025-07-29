@@ -24,10 +24,6 @@ export default function Home() {
       <TechStack />
       <Projects />
       <FeaturedTestimonial />
-      <SkillsTree />
-      {/* <AboutMe /> */}
-      {/* <MainHero /> */}
-      {/* <HeroSection /> */}
       {/* <Services /> */}
       {/* <Skills /> */}
       {/* <Portfolio /> */}

@@ -35,13 +35,14 @@ const Hero: React.FC = () => {
             Specialized in MERN Stack, I welcome you to my world of innovative
             web applications development. Let's create something great together!
           </p>
-          <div className="flex items-center cursor-pointer w-max mt-8 group relative">
+          <button className="bg-red-300 w-max">Portfolio</button>
+          {/* <div className="flex items-center cursor-pointer w-max mt-8 group relative">
             <div className="w-8 h-8 bg-gray-300 rounded-full absolute left-0 transition-all duration-500 group-hover:left-[calc(100%-2rem)]" />
             <p className="text-xs ml-4 font-black font-mont z-10 group-hover:text-gray-600 transition-all duration-500">
               SEE MY WORKS
             </p>
             <Icon icon="radix-icons:arrow-right" className="ml-3 z-10" />
-          </div>
+          </div> */}
         </motion.div>
 
         <motion.div

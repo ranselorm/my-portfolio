@@ -14,7 +14,7 @@ const slideUp = {
 
 const Hero: React.FC = () => {
   return (
-    <section className="py-20 font-primary flex items-center justify-center section-padding h-screen bg-grey">
+    <section className="py-20 font-hero flex items-center justify-center section-padding h-screen bg-grey">
       <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 z-10">
         <motion.div
           className="text-center md:text-left flex-1 flex flex-col space-y-8"

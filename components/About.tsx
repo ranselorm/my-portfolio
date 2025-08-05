@@ -79,38 +79,10 @@ const About = () => {
             quisquam enim nam! Lorem ipsum dolor sit amet consectetur
           </p>
 
-          {/* <p className="leading-normal text-gray-700 mb-4 text-base">
-            My Toolkit includesReact.js | Next.js | JavaScript | TypeScript |
-            HTML | CSS | Tailwind CSS | Node.js | Express.js | Restful APIs |
-            MongoDB | Git{" "}
-          </p>
-          <Marquee
-            pauseOnHover
-            speed={20}
-            className="text-3xl font-semibold mt-8"
-          >
-            {skills.map((skill, index) => (
-              <div key={index} className="flex items-center gap-2 mx-6">
-                <Icon icon={skill.icon} />
-              </div>
-            ))}
-          </Marquee> */}
-          {/* 
-          <button className="bg-primary text-sm text-white px-4 py-2 rounded-md mt-4 hover:bg-dark transition-all duration-150 uppercase flex items-center">
-            Portfolio
-          </button> */}
-          <div className="flex items-center cursor-pointer w-max mt-8 group relative">
-            {/* Animated Circle */}
-            <div className="w-8 h-8 bg-gray-300 rounded-full absolute left-0 transition-all duration-500 group-hover:left-[calc(100%-2rem)]" />
-
-            {/* Text */}
-            <p className="text-xs ml-4 font-black font-mont z-10 transition-all duration-500 group-hover:text-gray-600">
-              SEE MY WORKS
-            </p>
-
-            {/* Arrow Icon */}
+          <button className="w-max p-2 rounded bg-black text-white flex items-center justify-center font-bold text-sm hover:bg-gray-800 transition-all duration-150">
+            Contact
             <Icon icon="radix-icons:arrow-right" className="ml-3 z-10" />
-          </div>
+          </button>
         </motion.div>
       </motion.div>
     </motion.section>
